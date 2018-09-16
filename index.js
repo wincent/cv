@@ -17,86 +17,96 @@ try {
   };
 }
 
-const doc = new PDFDocument();
-doc.info.Title = 'Curriculum Vitae';
-doc.info.Author = data.identity.name;
+function build(options = {}) {
+  const doc = new PDFDocument();
+  doc.info.Title = 'Curriculum Vitae';
+  doc.info.Author = data.identity.name;
 
-doc
-  .registerFont('baskerville', 'fonts/Quattrocento/Quattrocento-Regular.ttf')
-  .registerFont('didot', 'fonts/Playfair_Display/PlayfairDisplay-Bold.ttf')
-  .registerFont(
-    'didot-regular',
-    'fonts/Playfair_Display/PlayfairDisplay-Regular.ttf',
-  );
-
-const date = dateString => {
-  // We only want to show the year.
-  return dateString.toString().replace(/^(\d{4}).*/, '$1');
-};
-
-const capitalize = string => {
-  return string.slice(0, 1).toUpperCase() + string.slice(1);
-};
-
-const heading = text =>
   doc
-    .font('didot')
-    .fontSize(11)
-    .moveDown()
-    .text(text.toUpperCase(), {characterSpacing: 2});
+    .registerFont('baskerville', 'fonts/Quattrocento/Quattrocento-Regular.ttf')
+    .registerFont('didot', 'fonts/Playfair_Display/PlayfairDisplay-Bold.ttf')
+    .registerFont(
+      'didot-regular',
+      'fonts/Playfair_Display/PlayfairDisplay-Regular.ttf',
+    );
 
-const subHeading = text =>
-  doc
-    .font('didot')
-    .fontSize(11)
-    .moveDown()
-    .text(text, {characterSpacing: 0.5});
+  const date = dateString => {
+    // We only want to show the year.
+    return dateString.toString().replace(/^(\d{4}).*/, '$1');
+  };
 
-const para = text =>
-  doc
+  const capitalize = string => {
+    return string.slice(0, 1).toUpperCase() + string.slice(1);
+  };
+
+  const heading = text =>
+    doc
+      .font('didot')
+      .fontSize(11)
+      .moveDown()
+      .text(text.toUpperCase(), {characterSpacing: 2});
+
+  const subHeading = text =>
+    doc
+      .font('didot')
+      .fontSize(11)
+      .moveDown()
+      .text(text, {characterSpacing: 0.5});
+
+  const para = text =>
+    doc
+      .font('baskerville')
+      .fontSize(12)
+      .lineGap(2)
+      .text(text);
+
+  let header = doc
+    .font('didot-regular')
+    .fontSize(16)
+    .text(data.identity.name, {align: 'right'})
     .font('baskerville')
     .fontSize(12)
     .lineGap(2)
-    .text(text);
+    .moveDown();
 
-doc
-  .font('didot-regular')
-  .fontSize(16)
-  .text(data.identity.name, {align: 'right'})
-  .font('baskerville')
-  .fontSize(12)
-  .lineGap(2)
-  .moveDown()
-  .text(pii.street, {align: 'right'})
-  .text(`${pii.zip} ${pii.city}, ${pii.country}`, {align: 'right'})
-  .text(pii.phone, {align: 'right'})
-  .text(data.identity.email, {align: 'right'});
+  if (options.private) {
+    header = header
+      .text(pii.street, {align: 'right'})
+      .text(`${pii.zip} ${pii.city}, ${pii.country}`, {align: 'right'})
+      .text(pii.phone, {align: 'right'});
+  }
+  header.text(data.identity.email, {align: 'right'});
 
-heading('Profile');
-para(data.profile);
+  heading('Profile');
+  para(data.profile);
 
-const ENDASH = '\u2013';
-const EMDASH = '\u2014';
+  const ENDASH = '\u2013';
+  const EMDASH = '\u2014';
 
-heading('Experience');
-data.experience.forEach(({role, company, location, from, to, description}) => {
-  subHeading(
-    `${role}, ${company}; ${location} ${EMDASH} ${date(from)}${ENDASH}${date(
-      to,
-    )}`,
-  );
-  para(description);
-});
+  heading('Experience');
+  data.experience.forEach(({role, company, location, from, to, description}) => {
+    subHeading(
+      `${role}, ${company}; ${location} ${EMDASH} ${date(from)}${ENDASH}${date(
+        to,
+      )}`,
+    );
+    para(description);
+  });
 
-heading('Education');
-data.education.forEach(({institution, graduated, qualification}) => {
-  para(`${institution}, ${date(graduated)} ${EMDASH} ${qualification}`);
-});
+  heading('Education');
+  data.education.forEach(({institution, graduated, qualification}) => {
+    para(`${institution}, ${date(graduated)} ${EMDASH} ${qualification}`);
+  });
 
-heading('Skills');
-Object.keys(data.skills).forEach(skill => {
-  para(capitalize(skill) + ': ' + data.skills[skill].join(', ') + '.');
-});
+  heading('Skills');
+  Object.keys(data.skills).forEach(skill => {
+    para(capitalize(skill) + ': ' + data.skills[skill].join(', ') + '.');
+  });
 
-doc.pipe(fs.createWriteStream('cv.pdf'));
-doc.end();
+  const outfile = options.private ? 'cv-private.pdf' : 'cv.pdf';
+  doc.pipe(fs.createWriteStream(outfile));
+  doc.end();
+}
+
+build();
+build({private: true});
