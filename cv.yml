@@ -19,48 +19,67 @@ presence:
   twitter: https://twitter.com/wincent
   website: https://wincent.com
 
-profile: Front-End Engineer
+profile:
+  label:
+    en: Profile
+    es: Perfil
+  text:
+    en: Software Engineer
+    es: Desarrollador
 
 experience:
+  label:
+    en: Experience
+    es: Experiencia
+  jobs:
+    - role:
+        en: Front-End Engineer
+        es: Desarrollador de Interfaces de Usuario
+      company: Facebook
+      location: Menlo Park, California
+      from: 2014-01
+      to: 2018-07
+      description:
+        Coder, mentor and tech lead working on Product Infrastructure —
+        from open source JavaScript libraries (Relay, GraphQL) to internal
+        build and developer tooling — and Ads Interfaces (among the
+        largest and full-featured React applications in the world).
 
-  - role: Front-End Engineer
-    company: Facebook
-    location: Menlo Park, California
-    from: 2014-01
-    to: 2018-07
-    description:
-      Coder, mentor and tech lead working on Product Infrastructure —
-      from open source JavaScript libraries (Relay, GraphQL) to internal
-      build and developer tooling — and Ads Interfaces (among the
-      largest and full-featured React applications in the world).
+    - role:
+        en: Director of Engineering
+        es: Director de Ingeniería
+      company: Causes
+      location: San Francisco, California
+      from: 2011-03
+      to: 2013-12
+      description:
+        Key player in the formation and maintenance of engineering
+        culture focused on quality, pragmatism, and individual and
+        team development. Mentored 10 direct reports. Full-stack
+        development of many user-facing features and underlying
+        infrastructure. Implemented systematic code review (via
+        Gerrit). Served as Tech Lead, Coach and Mentor.
 
-  - role: Director of Engineering
-    company: Causes
-    location: San Francisco, California
-    from: 2011-03
-    to: 2013-12
-    description:
-      Key player in the formation and maintenance of engineering
-      culture focused on quality, pragmatism, and individual and
-      team development. Mentored 10 direct reports. Full-stack
-      development of many user-facing features and underlying
-      infrastructure. Implemented systematic code review (via
-      Gerrit). Served as Tech Lead, Coach and Mentor.
-
-  - role: Owner/Operator
-    company: wincent.com
-    location: Australia
-    from: 2002
-    to: 2011
-    description:
-      Developed macOS applications in C and Objective-C, Rails
-      applications, and a large number of open source projects.
+    - role:
+        en: Owner/Operator
+        es: Fundador/Autónomo
+      company: wincent.com
+      location: Australia
+      from: 2002
+      to: 2011
+      description:
+        Developed macOS applications in C and Objective-C, Rails
+        applications, and a large number of open source projects.
 
 education:
+  label:
+    en: Education
+    es: Formación
 
-  - institution: Flinders University
-    graduated: 1999
-    qualification: Bachelor of Education (UP/LS)(Hons)
+  qualifications:
+    - institution: Flinders University
+      graduated: 1999
+      qualification: Bachelor of Education (UP/LS)(Hons)
 
 awards:
 
@@ -81,25 +100,40 @@ publications:
     when: 2012-08
 
 skills:
+  label:
+    en: Skills,
+    es: Conocimiento
+  categories:
+    programming languages:
+      label:
+        en: Programming languages
+        es: Lenguajes de programación
+      items:
+        - JavaScript
+        - Ruby
+        - C
+        - Haskell
+        - ReasonML
+        - PHP
+        - Perl
+        - Objective-C
 
-  programming languages:
-    - JavaScript
-    - Ruby
-    - C
-    - Haskell
-    - ReasonML
-    - PHP
-    - Perl
-    - Objective-C
+    tools:
+      label:
+        en: Tools
+        es: Herramientas
+      items:
+        - HTML/CSS
+        - Zsh/Bash
+        - Vim
+        - Git/Mercurial
+        - MySQL/Redis
+        - Ansible
 
-  tools:
-    - HTML/CSS
-    - Zsh/Bash
-    - Vim
-    - Git/Mercurial
-    - MySQL/Redis
-    - Ansible
-
-  spoken languages:
-    - English
-    - Spanish
+    spoken languages:
+      label:
+        en: Spoken languages
+        es: Idiomas
+      items:
+        - English
+        - Spanish

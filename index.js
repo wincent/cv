@@ -80,17 +80,18 @@ function build({language, private} = {}) {
     link: `mailto:${data.identity.email}`,
   });
 
-  heading('Profile');
-  para(data.profile);
+  heading(data.profile.label[language]);
+  para(data.profile.text[language]);
 
   const ENDASH = '\u2013';
   const EMDASH = '\u2014';
 
-  heading('Experience').moveUp();
-  data.experience.forEach(
+  heading(data.experience.label[language]).moveUp();
+  data.experience.jobs.forEach(
     ({role, company, location, from, to, description}) => {
       subHeading(
-        `${role}, ${company}; ${location} ${EMDASH} ${date(
+        // TODO: use fancy proxy shit to automate language access
+        `${role[language]}, ${company}; ${location} ${EMDASH} ${date(
           from,
         )}${ENDASH}${date(to)}`,
       );
@@ -98,14 +99,16 @@ function build({language, private} = {}) {
     },
   );
 
-  heading('Education');
-  data.education.forEach(({institution, graduated, qualification}) => {
-    para(`${institution}, ${date(graduated)} ${EMDASH} ${qualification}`);
-  });
+  heading(data.education.label[language]);
+  data.education.qualifications.forEach(
+    ({institution, graduated, qualification}) => {
+      para(`${institution}, ${date(graduated)} ${EMDASH} ${qualification}`);
+    },
+  );
 
-  heading('Skills');
-  Object.keys(data.skills).forEach(skill => {
-    para(capitalize(skill) + ': ' + data.skills[skill].join(', ') + '.');
+  heading(data.skills.label[language]);
+  Object.values(data.skills.categories).forEach(category => {
+    para(capitalize(category.label[language]) + ': ' + category.items.join(', ') + '.');
   });
 
   const outfile = private
