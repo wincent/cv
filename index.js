@@ -23,30 +23,20 @@ try {
 function localize(object, language) {
   if (typeof object === 'object' && object !== null) {
     if (rawData.languages.every(l => typeof object[l] === 'string')) {
-      // Flatten.
+      // Materialize the concrete language choice from the list.
       return object[language];
     }
-    return new Proxy(object, {
-      get(target, prop, receiver) {
-        const value = Reflect.get(...arguments);
-        if (Array.isArray(value)) {
-          return value.map(item => {
-            return localize(item, language);
-          });
-        } else if (typeof value === 'object' && value !== null) {
-          const nested = {};
-          Object.keys(value).forEach(key => {
-            nested[key] = localize(value[key], language);
-          });
-          return nested;
-        } else {
-          return value;
-        }
-      },
-    });
-  } else {
-    return object;
+    if (Array.isArray(object)) {
+      return object.map(item => localize(item, language));
+    } else {
+      const nested = {};
+      Object.keys(object).forEach(key => {
+        nested[key] = localize(object[key], language);
+      });
+      return nested;
+    }
   }
+  return object;
 }
 
 function build({language, private} = {}) {
