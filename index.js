@@ -86,7 +86,7 @@ function build(options = {}) {
   const ENDASH = '\u2013';
   const EMDASH = '\u2014';
 
-  heading('Experience');
+  heading('Experience').moveUp();
   data.experience.forEach(
     ({role, company, location, from, to, description}) => {
       subHeading(
