@@ -11,7 +11,7 @@ doc.info.Author = data.identity.name;
 doc
   .registerFont(
     'baskerville',
-    'fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf',
+    'fonts/Quattrocento/Quattrocento-Regular.ttf',
   )
   .registerFont('didot', 'fonts/Playfair_Display/PlayfairDisplay-Bold.ttf')
   .registerFont(
@@ -46,6 +46,7 @@ const para = text =>
   doc
     .font('baskerville')
     .fontSize(12)
+    .lineGap(2)
     .text(text);
 
 doc
@@ -53,7 +54,8 @@ doc
   .fontSize(16)
   .text(data.identity.name, {align: 'right'})
   .font('baskerville')
-  .fontSize(8)
+  .fontSize(12)
+  .lineGap(2)
   .moveDown()
   .text('123 Main Street', {align: 'right'})
   .text('12345 Madrid, Spain', {align: 'right'})
