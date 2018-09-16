@@ -12,5 +12,8 @@
   },
   "author": "Greg Hurrell <greg@hurrell.net>",
   "license": "SEE LICENSE IN COPYING.md",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "pdfkit": "0.8.3"
+  }
 }
