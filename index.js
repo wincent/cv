@@ -39,7 +39,76 @@ function localize(object, language) {
   return object;
 }
 
-function build({language, private} = {}) {
+class PDF {
+  constructor() {
+    this.doc = new PDFDocument();
+    this.doc
+      .registerFont(
+        'baskerville',
+        'fonts/Quattrocento/Quattrocento-Regular.ttf',
+      )
+      .registerFont('didot', 'fonts/Playfair_Display/PlayfairDisplay-Bold.ttf')
+      .registerFont(
+        'didot-regular',
+        'fonts/Playfair_Display/PlayfairDisplay-Regular.ttf',
+      );
+    this.info = this.doc.info;
+  }
+
+  header(name, content, email) {
+    let header = this.doc
+      .font('didot-regular')
+      .fontSize(16)
+      .text(name, {align: 'right'})
+      .font('baskerville')
+      .fontSize(12)
+      .lineGap(2)
+      .moveDown();
+
+    content.forEach(line => {
+      header = header.text(line, {align: 'right'});
+    });
+    header = header.text(email, {
+      align: 'right',
+      link: `mailto:${email}`,
+    });
+  }
+
+  heading(text, options = {}) {
+    this.doc
+      .font('didot')
+      .fontSize(11)
+      .moveDown()
+      .text(text.toUpperCase(), {characterSpacing: 2});
+    if (options.collapse) {
+      // HACK alert!
+      this.doc.moveUp();
+    }
+  }
+
+  subHeading(text) {
+    this.doc
+      .font('didot')
+      .fontSize(11)
+      .moveDown()
+      .text(text, {characterSpacing: 0.5});
+  }
+
+  para(text) {
+    this.doc
+      .font('baskerville')
+      .fontSize(12)
+      .lineGap(2)
+      .text(text);
+  }
+
+  write(outfile) {
+    this.doc.pipe(fs.createWriteStream(outfile));
+    this.doc.end();
+  }
+}
+
+function build({doc, language, private} = {}) {
   const data = localize(
     {
       ...rawData,
@@ -47,17 +116,8 @@ function build({language, private} = {}) {
     },
     language,
   );
-  const doc = new PDFDocument();
   doc.info.Title = 'Curriculum Vitae';
   doc.info.Author = data.identity.name;
-
-  doc
-    .registerFont('baskerville', 'fonts/Quattrocento/Quattrocento-Regular.ttf')
-    .registerFont('didot', 'fonts/Playfair_Display/PlayfairDisplay-Bold.ttf')
-    .registerFont(
-      'didot-regular',
-      'fonts/Playfair_Display/PlayfairDisplay-Regular.ttf',
-    );
 
   const date = dateString => {
     // We only want to show the year.
@@ -68,84 +128,56 @@ function build({language, private} = {}) {
     return string.slice(0, 1).toUpperCase() + string.slice(1);
   };
 
-  const heading = text =>
-    doc
-      .font('didot')
-      .fontSize(11)
-      .moveDown()
-      .text(text.toUpperCase(), {characterSpacing: 2});
+  doc.header(
+    data.identity.name,
+    [
+      ...(private
+        ? [
+            data.pii.street,
+            `${data.pii.zip} ${data.pii.city}, ${data.pii.country}`,
+            data.pii.phone,
+          ]
+        : []),
+    ],
+    data.identity.email,
+  );
 
-  const subHeading = text =>
-    doc
-      .font('didot')
-      .fontSize(11)
-      .moveDown()
-      .text(text, {characterSpacing: 0.5});
-
-  const para = text =>
-    doc
-      .font('baskerville')
-      .fontSize(12)
-      .lineGap(2)
-      .text(text);
-
-  let header = doc
-    .font('didot-regular')
-    .fontSize(16)
-    .text(data.identity.name, {align: 'right'})
-    .font('baskerville')
-    .fontSize(12)
-    .lineGap(2)
-    .moveDown();
-
-  if (private) {
-    header = header
-      .text(data.pii.street, {align: 'right'})
-      .text(`${data.pii.zip} ${data.pii.city}, ${data.pii.country}`, {
-        align: 'right',
-      })
-      .text(data.pii.phone, {align: 'right'});
-  }
-  header.text(data.identity.email, {
-    align: 'right',
-    link: `mailto:${data.identity.email}`,
-  });
-
-  heading(data.profile.label);
-  para(data.profile.text);
+  doc.heading(data.profile.label);
+  doc.para(data.profile.text);
 
   const ENDASH = '\u2013';
   const EMDASH = '\u2014';
 
-  heading(data.experience.label).moveUp();
+  doc.heading(data.experience.label, {collapse: true});
   data.experience.jobs.forEach(
     ({role, company, location, from, to, description}) => {
-      subHeading(
+      doc.subHeading(
         `${role}, ${company}; ${location} ${EMDASH} ${date(
           from,
         )}${ENDASH}${date(to)}`,
       );
-      para(description);
+      doc.para(description);
     },
   );
 
-  heading(data.education.label);
+  doc.heading(data.education.label);
   data.education.qualifications.forEach(
     ({institution, graduated, qualification}) => {
-      para(`${institution}, ${date(graduated)} ${EMDASH} ${qualification}`);
+      doc.para(`${institution}, ${date(graduated)} ${EMDASH} ${qualification}`);
     },
   );
 
-  heading(data.skills.label);
+  doc.heading(data.skills.label);
   Object.values(data.skills.categories).forEach(category => {
-    para(capitalize(category.label) + ': ' + category.items.join(', ') + '.');
+    doc.para(
+      capitalize(category.label) + ': ' + category.items.join(', ') + '.',
+    );
   });
 
   const outfile = private
     ? `private/cv.${language}.pdf`
     : `public/cv.${language}.pdf`;
-  doc.pipe(fs.createWriteStream(outfile));
-  doc.end();
+  doc.write(outfile);
 }
 
 function mkdir(string) {
@@ -159,6 +191,6 @@ function mkdir(string) {
 mkdir('public');
 mkdir('private');
 rawData.languages.forEach(language => {
-  build({language});
-  build({language, private: true});
+  build({doc: new PDF(), language});
+  build({doc: new PDF(), language, private: true});
 });
