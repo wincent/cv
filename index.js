@@ -84,14 +84,16 @@ function build(options = {}) {
   const EMDASH = '\u2014';
 
   heading('Experience');
-  data.experience.forEach(({role, company, location, from, to, description}) => {
-    subHeading(
-      `${role}, ${company}; ${location} ${EMDASH} ${date(from)}${ENDASH}${date(
-        to,
-      )}`,
-    );
-    para(description);
-  });
+  data.experience.forEach(
+    ({role, company, location, from, to, description}) => {
+      subHeading(
+        `${role}, ${company}; ${location} ${EMDASH} ${date(
+          from,
+        )}${ENDASH}${date(to)}`,
+      );
+      para(description);
+    },
+  );
 
   heading('Education');
   data.education.forEach(({institution, graduated, qualification}) => {
