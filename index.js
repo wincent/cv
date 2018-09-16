@@ -2,7 +2,7 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const PDFDocument = require('pdfkit');
 
-const data = yaml.safeLoad(fs.readFileSync('./cv.yml', 'utf8'));
+const rawData = yaml.safeLoad(fs.readFileSync('./cv.yml', 'utf8'));
 let pii;
 try {
   pii = yaml.safeLoad(fs.readFileSync('./pii.yml', 'utf8'));
@@ -20,7 +20,43 @@ try {
   };
 }
 
+function localize(object, language) {
+  if (typeof object === 'object' && object !== null) {
+    if (rawData.languages.every(l => typeof object[l] === 'string')) {
+      // Flatten.
+      return object[language];
+    }
+    return new Proxy(object, {
+      get(target, prop, receiver) {
+        const value = Reflect.get(...arguments);
+        if (Array.isArray(value)) {
+          return value.map(item => {
+            return localize(item, language);
+          });
+        } else if (typeof value === 'object' && value !== null) {
+          const nested = {};
+          Object.keys(value).forEach(key => {
+            nested[key] = localize(value[key], language);
+          });
+          return nested;
+        } else {
+          return value;
+        }
+      },
+    });
+  } else {
+    return object;
+  }
+}
+
 function build({language, private} = {}) {
+  const data = localize(
+    {
+      ...rawData,
+      pii,
+    },
+    language,
+  );
   const doc = new PDFDocument();
   doc.info.Title = 'Curriculum Vitae';
   doc.info.Author = data.identity.name;
@@ -74,44 +110,47 @@ function build({language, private} = {}) {
 
   if (private) {
     header = header
-      .text(pii.street, {align: 'right'})
-      .text(`${pii.zip} ${pii.city}, ${pii.country[language]}`, {align: 'right'})
-      .text(pii.phone, {align: 'right'});
+      .text(data.pii.street, {align: 'right'})
+      .text(`${data.pii.zip} ${data.pii.city}, ${data.pii.country}`, {
+        align: 'right',
+      })
+      .text(data.pii.phone, {align: 'right'});
   }
   header.text(data.identity.email, {
     align: 'right',
     link: `mailto:${data.identity.email}`,
   });
 
-  heading(data.profile.label[language]);
-  para(data.profile.text[language]);
+  heading(data.profile.label);
+  para(data.profile.text);
 
   const ENDASH = '\u2013';
   const EMDASH = '\u2014';
 
-  heading(data.experience.label[language]).moveUp();
+  heading(data.experience.label).moveUp();
   data.experience.jobs.forEach(
     ({role, company, location, from, to, description}) => {
       subHeading(
         // TODO: use fancy proxy shit to automate language access
-        `${role[language]}, ${company}; ${location} ${EMDASH} ${date(
+        // basically, implement toString on anything that has en/es subprops
+        `${role}, ${company}; ${location} ${EMDASH} ${date(
           from,
         )}${ENDASH}${date(to)}`,
       );
-      para(description[language]);
+      para(description);
     },
   );
 
-  heading(data.education.label[language]);
+  heading(data.education.label);
   data.education.qualifications.forEach(
     ({institution, graduated, qualification}) => {
       para(`${institution}, ${date(graduated)} ${EMDASH} ${qualification}`);
     },
   );
 
-  heading(data.skills.label[language]);
+  heading(data.skills.label);
   Object.values(data.skills.categories).forEach(category => {
-    para(capitalize(category.label[language]) + ': ' + category.items.join(', ') + '.');
+    para(capitalize(category.label) + ': ' + category.items.join(', ') + '.');
   });
 
   const outfile = private
@@ -131,7 +170,7 @@ function mkdir(string) {
 
 mkdir('public');
 mkdir('private');
-data.languages.forEach(language => {
+rawData.languages.forEach(language => {
   build({language});
   build({language, private: true});
 });
