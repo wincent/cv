@@ -1,0 +1,93 @@
+version: 2018-09-16
+
+identity:
+
+  name: Greg Hurrell
+
+presence:
+
+  facebook: https://www.facebook.com/glh
+  github: https://github.com/wincent
+  keybase: https://keybase.io/wincent
+  linkedin: https://www.linkedin.com/in/greghurrell/
+  stackoverflow: https://stackoverflow.com/users/2103996/wincent
+  twitter: https://twitter.com/wincent
+  website: https://wincent.com
+  email: greg@hurrell.net
+
+experience:
+
+  - role: Front-End Engineer
+    company: Facebook
+    from: 2014-01
+    to: 2018-07
+    description:
+      TBD
+
+  - role: Director of Engineering
+    company: Causes
+    from: 2011-03
+    to: 2013-12
+    description:
+      Key player in the formation and maintenance of engineering
+      culture focused on quality, pragmatism, and individual and
+      team development. Mentored 10 direct reports. Full-stack
+      development of many user-facing features and underlying
+      infrastructure. Implemented systematic code review (via
+      Gerrit). Served as Tech Lead, Coach and Mentor.
+
+  - role: Owner/Operator
+    company: wincent.com
+    from: 2002
+    to: 2011
+    description:
+      Developed OS X applications in C and Objective-C, Rails
+      applications, and a large number of open source projects.
+
+education:
+
+  - institution: Flinders University
+    from: 1996
+    to: 1999
+
+awards:
+
+  - University Medal
+
+publications:
+
+  - title: Relay 2 - simpler, faster, and more predictable
+    link: https://youtu.be/OEfUBN9dAI8
+    when: 2016-08
+
+  - title: Relay Deep Dive
+    link: https://youtu.be/oPSuvaYmXBY
+    when: 2016-04
+
+  - title: Migrating Rails with a Large Codebase
+    link: https://youtu.be/qgCM2bca49w
+    when: 2012-08
+
+skills:
+
+  spoken languages:
+    - English
+    - Spanish
+
+  programming languages:
+    - JavaScript
+    - Ruby
+    - C
+    - Haskell
+    - ReasonML
+    - PHP
+    - Perl
+    - Objective-C
+
+  tools:
+    - HTML/CSS
+    - Zsh/Bash
+    - Vim
+    - Git/Mercurial
+    - MySQL/Redis
+    - Ansible

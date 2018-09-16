@@ -4,6 +4,7 @@
   "description": "CV builder",
   "main": "index.js",
   "scripts": {
+    "build": "node index.js",
     "test": "/bin/false"
   },
   "repository": {
@@ -14,6 +15,7 @@
   "license": "SEE LICENSE IN COPYING.md",
   "private": true,
   "devDependencies": {
+    "js-yaml": "3.12.0",
     "pdfkit": "0.8.3"
   }
 }
