@@ -2,7 +2,10 @@ version: 2018-09-16
 
 identity:
 
+  email: greg@hurrell.net
   name: Greg Hurrell
+
+profile: Front-End Engineer
 
 presence:
 
@@ -13,12 +16,12 @@ presence:
   stackoverflow: https://stackoverflow.com/users/2103996/wincent
   twitter: https://twitter.com/wincent
   website: https://wincent.com
-  email: greg@hurrell.net
 
 experience:
 
   - role: Front-End Engineer
     company: Facebook
+    location: Menlo Park, California
     from: 2014-01
     to: 2018-07
     description:
@@ -29,6 +32,7 @@ experience:
 
   - role: Director of Engineering
     company: Causes
+    location: San Francisco, California
     from: 2011-03
     to: 2013-12
     description:
@@ -41,17 +45,18 @@ experience:
 
   - role: Owner/Operator
     company: wincent.com
+    location: Australia
     from: 2002
     to: 2011
     description:
-      Developed OS X applications in C and Objective-C, Rails
+      Developed macOS applications in C and Objective-C, Rails
       applications, and a large number of open source projects.
 
 education:
 
   - institution: Flinders University
-    from: 1996
-    to: 1999
+    graduated: 1999
+    qualification: Bachelor of Education (UP/LS)(Hons)
 
 awards:
 
@@ -73,10 +78,6 @@ publications:
 
 skills:
 
-  spoken languages:
-    - English
-    - Spanish
-
   programming languages:
     - JavaScript
     - Ruby
@@ -94,3 +95,7 @@ skills:
     - Git/Mercurial
     - MySQL/Redis
     - Ansible
+
+  spoken languages:
+    - English
+    - Spanish
