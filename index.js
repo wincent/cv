@@ -3,6 +3,19 @@ const yaml = require('js-yaml');
 const PDFDocument = require('pdfkit');
 
 const data = yaml.safeLoad(fs.readFileSync('./cv.yml', 'utf8'));
+let pii;
+try {
+  pii = yaml.safeLoad(fs.readFileSync('./pii.yml', 'utf8'));
+} catch (err) {
+  console.log('Failed to load pii.yml; run `vendor/git-cipher decrypt`');
+  pii = {
+    street: '123 Main Street',
+    zip: 12345,
+    city: 'Madrid',
+    country: 'Spain',
+    phone: '555-555-5555',
+  };
+}
 
 const doc = new PDFDocument();
 doc.info.Title = 'Curriculum Vitae';
@@ -54,11 +67,9 @@ doc
   .fontSize(12)
   .lineGap(2)
   .moveDown()
-  .text('123 Main Street', {align: 'right'})
-  .text('12345 Madrid, Spain', {align: 'right'})
-  .text('555-555-5555', {
-    align: 'right',
-  })
+  .text(pii.street, {align: 'right'})
+  .text(`${pii.zip} ${pii.city}, ${pii.country}`, {align: 'right'})
+  .text(pii.phone, {align: 'right'})
   .text(data.identity.email, {align: 'right'});
 
 heading('Profile');
