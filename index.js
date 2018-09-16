@@ -12,7 +12,10 @@ try {
     street: '123 Main Street',
     zip: 12345,
     city: 'Madrid',
-    country: 'Spain',
+    country: {
+      en: 'Spain',
+      es: 'España',
+    },
     phone: '555-555-5555',
   };
 }
@@ -72,7 +75,7 @@ function build({language, private} = {}) {
   if (private) {
     header = header
       .text(pii.street, {align: 'right'})
-      .text(`${pii.zip} ${pii.city}, ${pii.country}`, {align: 'right'})
+      .text(`${pii.zip} ${pii.city}, ${pii.country[language]}`, {align: 'right'})
       .text(pii.phone, {align: 'right'});
   }
   header.text(data.identity.email, {
