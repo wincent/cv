@@ -121,8 +121,6 @@ function build({language, private} = {}) {
   data.experience.jobs.forEach(
     ({role, company, location, from, to, description}) => {
       subHeading(
-        // TODO: use fancy proxy shit to automate language access
-        // basically, implement toString on anything that has en/es subprops
         `${role}, ${company}; ${location} ${EMDASH} ${date(
           from,
         )}${ENDASH}${date(to)}`,
