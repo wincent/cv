@@ -75,7 +75,10 @@ function build(options = {}) {
       .text(`${pii.zip} ${pii.city}, ${pii.country}`, {align: 'right'})
       .text(pii.phone, {align: 'right'});
   }
-  header.text(data.identity.email, {align: 'right'});
+  header.text(data.identity.email, {
+    align: 'right',
+    link: `mailto:${data.identity.email}`,
+  });
 
   heading('Profile');
   para(data.profile);
