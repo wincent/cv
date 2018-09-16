@@ -1,3 +1,7 @@
+languages:
+  - en
+  - es
+
 version: 2018-09-16
 
 identity:

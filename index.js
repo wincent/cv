@@ -125,7 +125,7 @@ function mkdir(string) {
 
 mkdir('public');
 mkdir('private');
-['en', 'es'].forEach(language => {
+data.languages.forEach(language => {
   build({language});
   build({language, private: true});
 });
