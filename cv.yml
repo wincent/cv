@@ -9,8 +9,6 @@ identity:
   email: greg@hurrell.net
   name: Greg Hurrell
 
-profile: Front-End Engineer
-
 presence:
 
   facebook: https://www.facebook.com/glh
@@ -20,6 +18,8 @@ presence:
   stackoverflow: https://stackoverflow.com/users/2103996/wincent
   twitter: https://twitter.com/wincent
   website: https://wincent.com
+
+profile: Front-End Engineer
 
 experience:
 
