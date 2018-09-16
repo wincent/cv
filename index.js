@@ -108,6 +108,40 @@ class PDF {
   }
 }
 
+class Plaintext {
+  constructor() {
+    this.info = {};
+    this._content = '';
+  }
+
+  header(name, content, email) {
+    this._content = `
+      ${name}
+      ${content.join('\n')}
+      ${email}
+    `.replace(/^\s+/gm, '') + '\n';
+  }
+
+  heading(text, options = {}) {
+    this._content += `${text}\n`;
+    this._content += '='.repeat(text.length) + '\n\n';
+  }
+
+  subHeading(text) {
+    this._content += `${text}\n`;
+    this._content += '-'.repeat(text.length) + '\n\n';
+  }
+
+  para(text) {
+    // TODO: wrap
+    this._content += `${text}\n\n`;
+  }
+
+  write(outfile) {
+    fs.writeFileSync(`${outfile}.txt`, this._content.trim() + '\n');
+  }
+}
+
 class Markdown {
   constructor() {
     this.info = {};
@@ -127,7 +161,6 @@ class Markdown {
   }
 
   subHeading(text) {
-    // for plaintext variant use underlines
     this._content += `### ${text}\n\n`;
   }
 
@@ -228,4 +261,7 @@ rawData.languages.forEach(language => {
 
   build({doc: new Markdown(), language});
   build({doc: new Markdown(), language, private: true});
+
+  build({doc: new Plaintext(), language});
+  build({doc: new Plaintext(), language, private: true});
 });
