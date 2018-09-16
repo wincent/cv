@@ -103,8 +103,40 @@ class PDF {
   }
 
   write(outfile) {
-    this.doc.pipe(fs.createWriteStream(outfile));
+    this.doc.pipe(fs.createWriteStream(`${outfile}.pdf`));
     this.doc.end();
+  }
+}
+
+class Markdown {
+  constructor() {
+    this.info = {};
+    this._content = '';
+  }
+
+  header(name, content, email) {
+    this._content = `
+      **${name}**
+      ${content.join('\n')}
+      [${email}](mailto:${email})
+    `.replace(/^\s+/gm, '') + '\n';
+  }
+
+  heading(text, options = {}) {
+    this._content += `## ${text}\n\n`;
+  }
+
+  subHeading(text) {
+    // for plaintext variant use underlines
+    this._content += `### ${text}\n\n`;
+  }
+
+  para(text) {
+    this._content += `${text}\n\n`;
+  }
+
+  write(outfile) {
+    fs.writeFileSync(`${outfile}.md`, this._content.trim() + '\n');
   }
 }
 
@@ -175,8 +207,8 @@ function build({doc, language, private} = {}) {
   });
 
   const outfile = private
-    ? `private/cv.${language}.pdf`
-    : `public/cv.${language}.pdf`;
+    ? `private/cv.${language}`
+    : `public/cv.${language}`;
   doc.write(outfile);
 }
 
@@ -193,4 +225,7 @@ mkdir('private');
 rawData.languages.forEach(language => {
   build({doc: new PDF(), language});
   build({doc: new PDF(), language, private: true});
+
+  build({doc: new Markdown(), language});
+  build({doc: new Markdown(), language, private: true});
 });
