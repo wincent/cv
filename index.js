@@ -17,7 +17,7 @@ try {
   };
 }
 
-function build(options = {}) {
+function build({language, private} = {}) {
   const doc = new PDFDocument();
   doc.info.Title = 'Curriculum Vitae';
   doc.info.Author = data.identity.name;
@@ -69,7 +69,7 @@ function build(options = {}) {
     .lineGap(2)
     .moveDown();
 
-  if (options.private) {
+  if (private) {
     header = header
       .text(pii.street, {align: 'right'})
       .text(`${pii.zip} ${pii.city}, ${pii.country}`, {align: 'right'})
@@ -108,7 +108,9 @@ function build(options = {}) {
     para(capitalize(skill) + ': ' + data.skills[skill].join(', ') + '.');
   });
 
-  const outfile = options.private ? 'private/cv.pdf' : 'public/cv.pdf';
+  const outfile = private
+    ? `private/cv.${language}.pdf`
+    : `public/cv.${language}.pdf`;
   doc.pipe(fs.createWriteStream(outfile));
   doc.end();
 }
@@ -123,5 +125,7 @@ function mkdir(string) {
 
 mkdir('public');
 mkdir('private');
-build();
-build({private: true});
+['en', 'es'].forEach(language => {
+  build({language});
+  build({language, private: true});
+});
