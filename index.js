@@ -122,14 +122,17 @@ class Plaintext {
     `.replace(/^\s+/gm, '') + '\n';
   }
 
-  heading(text, options = {}) {
+  _heading(text, underline) {
     this._content += `${text}\n`;
-    this._content += '='.repeat(text.length) + '\n\n';
+    this._content += underline.repeat(text.length) + '\n\n';
+  }
+
+  heading(text, options = {}) {
+    this._heading(text, '=');
   }
 
   subHeading(text) {
-    this._content += `${text}\n`;
-    this._content += '-'.repeat(text.length) + '\n\n';
+    this._heading(text, '-');
   }
 
   para(text) {
