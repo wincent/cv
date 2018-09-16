@@ -103,10 +103,20 @@ function build(options = {}) {
     para(capitalize(skill) + ': ' + data.skills[skill].join(', ') + '.');
   });
 
-  const outfile = options.private ? 'cv-private.pdf' : 'cv.pdf';
+  const outfile = options.private ? 'private/cv.pdf' : 'public/cv.pdf';
   doc.pipe(fs.createWriteStream(outfile));
   doc.end();
 }
 
+function mkdir(string) {
+  try {
+    fs.mkdirSync(string);
+  } catch {
+    // Let's optimistically assume directory already exists.
+  }
+}
+
+mkdir('public');
+mkdir('private');
 build();
 build({private: true});
