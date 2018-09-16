@@ -1,0 +1,16 @@
+{
+  "name": "cv",
+  "version": "1.0.0",
+  "description": "CV builder",
+  "main": "index.js",
+  "scripts": {
+    "test": "/bin/false"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git.wincent.com:/pub/git/public/cv.git"
+  },
+  "author": "Greg Hurrell <greg@hurrell.net>",
+  "license": "SEE LICENSE IN COPYING.md",
+  "private": true
+}
