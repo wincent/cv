@@ -9,10 +9,7 @@ doc.info.Title = 'Curriculum Vitae';
 doc.info.Author = data.identity.name;
 
 doc
-  .registerFont(
-    'baskerville',
-    'fonts/Quattrocento/Quattrocento-Regular.ttf',
-  )
+  .registerFont('baskerville', 'fonts/Quattrocento/Quattrocento-Regular.ttf')
   .registerFont('didot', 'fonts/Playfair_Display/PlayfairDisplay-Bold.ttf')
   .registerFont(
     'didot-regular',
