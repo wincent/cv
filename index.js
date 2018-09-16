@@ -28,22 +28,25 @@ const capitalize = string => {
   return string.slice(0, 1).toUpperCase() + string.slice(1);
 };
 
-const heading = text => doc
-  .font('didot')
-  .fontSize(11)
-  .moveDown()
-  .text(text.toUpperCase(), {characterSpacing: 2});
+const heading = text =>
+  doc
+    .font('didot')
+    .fontSize(11)
+    .moveDown()
+    .text(text.toUpperCase(), {characterSpacing: 2});
 
-const subHeading = text => doc
-  .font('didot')
-  .fontSize(11)
-  .moveDown()
-  .text(text, {characterSpacing: .5});
+const subHeading = text =>
+  doc
+    .font('didot')
+    .fontSize(11)
+    .moveDown()
+    .text(text, {characterSpacing: 0.5});
 
-const para = text => doc
-  .font('baskerville')
-  .fontSize(12)
-  .text(text);
+const para = text =>
+  doc
+    .font('baskerville')
+    .fontSize(12)
+    .text(text);
 
 doc
   .font('didot-regular')
@@ -54,7 +57,9 @@ doc
   .moveDown()
   .text('123 Main Street', {align: 'right'})
   .text('12345 Madrid, Spain', {align: 'right'})
-  .text('555-555-5555', {align: 'right'})
+  .text('555-555-5555', {
+    align: 'right',
+  })
   .text(data.identity.email, {align: 'right'});
 
 heading('Profile');
@@ -66,7 +71,9 @@ const EMDASH = '\u2014';
 heading('Experience');
 data.experience.forEach(({role, company, location, from, to, description}) => {
   subHeading(
-    `${role}, ${company}; ${location} ${EMDASH} ${date(from)}${ENDASH}${date(to)}`
+    `${role}, ${company}; ${location} ${EMDASH} ${date(from)}${ENDASH}${date(
+      to,
+    )}`,
   );
   para(description);
 });
