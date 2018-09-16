@@ -115,7 +115,8 @@ class Plaintext {
   }
 
   header(name, content, email) {
-    this._content = `
+    this._content =
+      `
       ${name}
       ${content.join('\n')}
       ${email}
@@ -135,9 +136,25 @@ class Plaintext {
     this._underline(text, '-');
   }
 
+  _wrap(string) {
+    const limit = 72;
+    let width = 0;
+    return string.split(' ').reduce((acc, word) => {
+      if (width + word.length + 1 > limit) {
+        width = word.length;
+        return acc + '\n' + word;
+      } else if (acc === '') {
+        width = word.length;
+        return word;
+      } else {
+        width += word.length + 1;
+        return acc + ' ' + word;
+      }
+    }, '');
+  }
+
   para(text) {
-    // TODO: wrap
-    this._content += `${text}\n\n`;
+    this._content += `${this._wrap(text)}\n\n`;
   }
 
   write(outfile) {
@@ -152,7 +169,8 @@ class Markdown {
   }
 
   header(name, content, email) {
-    this._content = `
+    this._content =
+      `
       **${name}**
       ${content.join('\n')}
       [${email}](mailto:${email})
@@ -242,9 +260,7 @@ function build({doc, language, private} = {}) {
     );
   });
 
-  const outfile = private
-    ? `private/cv.${language}`
-    : `public/cv.${language}`;
+  const outfile = private ? `private/cv.${language}` : `public/cv.${language}`;
   doc.write(outfile);
 }
 
