@@ -152,7 +152,7 @@ function mkdir(string) {
   try {
     fs.mkdirSync(string);
   } catch {
-    // Let's optimistically assume directory already exists.
+    // Let's optimistically assume error was because directory already exists.
   }
 }
 
