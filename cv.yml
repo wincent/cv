@@ -40,10 +40,16 @@ experience:
       from: 2014-01
       to: 2018-07
       description:
-        Coder, mentor and tech lead working on Product Infrastructure —
-        from open source JavaScript libraries (Relay, GraphQL) to internal
-        build and developer tooling — and Ads Interfaces (among the
-        largest and full-featured React applications in the world).
+        en:
+          Coder, mentor and tech lead working on Product Infrastructure —
+          from open source JavaScript libraries (Relay, GraphQL) to internal
+          build and developer tooling — and Ads Interfaces (among the
+          largest and full-featured React applications in the world).
+        es:
+          Coder, mentor and tech lead working on Product Infrastructure —
+          from open source JavaScript libraries (Relay, GraphQL) to internal
+          build and developer tooling — and Ads Interfaces (among the
+          largest and full-featured React applications in the world).
 
     - role:
         en: Director of Engineering
@@ -53,12 +59,20 @@ experience:
       from: 2011-03
       to: 2013-12
       description:
-        Key player in the formation and maintenance of engineering
-        culture focused on quality, pragmatism, and individual and
-        team development. Mentored 10 direct reports. Full-stack
-        development of many user-facing features and underlying
-        infrastructure. Implemented systematic code review (via
-        Gerrit). Served as Tech Lead, Coach and Mentor.
+        en:
+          Key player in the formation and maintenance of engineering
+          culture focused on quality, pragmatism, and individual and
+          team development. Mentored 10 direct reports. Full-stack
+          development of many user-facing features and underlying
+          infrastructure. Implemented systematic code review (via
+          Gerrit). Served as Tech Lead, Coach and Mentor.
+        es:
+          Key player in the formation and maintenance of engineering
+          culture focused on quality, pragmatism, and individual and
+          team development. Mentored 10 direct reports. Full-stack
+          development of many user-facing features and underlying
+          infrastructure. Implemented systematic code review (via
+          Gerrit). Served as Tech Lead, Coach and Mentor.
 
     - role:
         en: Owner/Operator
@@ -68,8 +82,13 @@ experience:
       from: 2002
       to: 2011
       description:
-        Developed macOS applications in C and Objective-C, Rails
-        applications, and a large number of open source projects.
+        en:
+          Developed macOS applications in C and Objective-C, Rails
+          applications, and a large number of open source projects.
+        es:
+          Developed macOS applications in C and Objective-C, Rails
+          applications, and a large number of open source projects.
+
 
 education:
   label:

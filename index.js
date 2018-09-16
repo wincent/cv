@@ -95,7 +95,7 @@ function build({language, private} = {}) {
           from,
         )}${ENDASH}${date(to)}`,
       );
-      para(description);
+      para(description[language]);
     },
   );
 
