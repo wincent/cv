@@ -1,0 +1,152 @@
+{
+  "definitions": {
+    "localized": {
+      "$id": "#localized",
+      "type": "object",
+      "propertyNames": {"enum": {"$data": "/languages"}},
+      "required": {"$data": "/languages"},
+      "patternProperties": {
+        ".*": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "dateish": {
+      "$id": "#dateish",
+      "anyOf": [
+        {"format": "date"},
+        {"pattern": "^\\d{4}-\\d{2}$"},
+        {"const": "Present"}
+      ]
+    }
+  },
+  "properties": {
+    "languages": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z]{2}$"
+      }
+    },
+    "version": {"format": "date"},
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "email": {"format": "email"},
+        "name": {"type": "string"}
+      },
+      "required": ["email", "name"]
+    },
+    "presence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "facebook": {"format": "uri"},
+        "github": {"format": "uri"},
+        "keybase": {"format": "uri"},
+        "linkedin": {"format": "uri"},
+        "stackoverflow": {"format": "uri"},
+        "twitter": {"format": "uri"},
+        "website": {"format": "uri"}
+      }
+    },
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "label": {"$ref": "#localized"},
+        "text": {"$ref": "#localized"}
+      },
+      "required": ["label", "text"]
+    },
+    "experience": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "label": {"$ref": "#localized"},
+        "jobs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "role": {"$ref": "#localized"},
+              "company": {"type": "string"},
+              "location": {"type": "string"},
+              "from": {"$ref": "#dateish"},
+              "to": {"$ref": "#dateish"},
+              "description": {"$ref": "#localized"}
+            },
+            "required": ["role", "company", "location", "from", "to", "description"]
+          }
+        }
+      }
+    },
+    "education": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "label": {"$ref": "#localized"},
+        "qualifications": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "institution": {"type": "string"},
+              "graduated": {"$ref": "#dateish"},
+              "qualification": {"type": "string"}
+            },
+            "required": ["institution", "graduated", "qualification"]
+          }
+        }
+      }
+    },
+    "awards": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "publications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "title": {"type": "string"},
+          "link": {"format": "uri"},
+          "when": {"$ref": "#dateish"}
+        },
+        "required": ["title", "link", "when"]
+      }
+    },
+    "skills": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "label": {"$ref": "#localized"},
+        "categories": {
+          "type": "object",
+          "patternProperties": {
+            ".*": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "label": {"$ref": "#localized"},
+                "items": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {"type": "string"}
+                }
+              },
+              "required": ["label", "items"]
+            }
+          }
+        }
+      },
+      "required": ["label", "categories"]
+    }
+  }
+}
