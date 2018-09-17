@@ -317,7 +317,7 @@ function build({doc, language, private} = {}) {
     );
   });
 
-  const outfile = private ? `private/cv.${language}` : `public/cv.${language}`;
+  const outfile = `${private ? 'private' : 'public'}/cv.${language}`;
   doc.write(outfile);
 }
 
