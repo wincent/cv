@@ -6,6 +6,7 @@
   "scripts": {
     "build": "node index.js",
     "pretty": "prettier --write index.js",
+    "publish": "sh scripts/publish",
     "test": "prettier --list-different index.js"
   },
   "repository": {
