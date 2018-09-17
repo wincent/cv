@@ -40,9 +40,10 @@ function localize(object, language) {
 }
 
 class HTML {
-  constructor() {
+  constructor(language) {
     this.info = {};
     this._content = '';
+    this._language = language;
   }
 
   _escape(html) {
@@ -55,11 +56,10 @@ class HTML {
   }
 
   header(name, content, email) {
-    // TODO: set lang, obviously
     this._content =
       `
       <!DOCTYPE html>
-      <html lang="en">
+      <html lang="${this._language}">
       <head>
       <meta charset="utf-8">
       <title>
@@ -341,6 +341,6 @@ rawData.languages.forEach(language => {
   build({doc: new Plaintext(), language});
   build({doc: new Plaintext(), language, private: true});
 
-  build({doc: new HTML(), language});
-  build({doc: new HTML(), language, private: true});
+  build({doc: new HTML(language), language});
+  build({doc: new HTML(language), language, private: true});
 });
