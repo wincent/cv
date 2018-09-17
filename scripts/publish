@@ -10,7 +10,6 @@ for FILE in $(find public -type f -and -not -name '.*'); do
   # Add file to index.
   MODE=100644
   NAME=$(basename "$FILE")
-  # "fatal: index file smaller than expected"
   env GIT_INDEX_FILE="$INDEX" git update-index \
     --add \
     --cacheinfo "${MODE},${BLOB_ID},${NAME}"
