@@ -364,4 +364,7 @@ rawData.languages.forEach(language => {
 
   build({doc: new HTML(language), language});
   build({doc: new HTML(language), language, private: true});
+
+  // Add default index page.
+  fs.copyFileSync('public/cv.en.html', 'public/index.html');
 });

@@ -3,7 +3,7 @@
 # Get a temporary index file to work with.
 INDEX="$(mktemp -d)/index"
 
-for FILE in $(find public -type f -and -name 'cv.*'); do
+for FILE in $(find public -type f -and -not -name '.*'); do
   # Add file contents to object database.
   BLOB_ID=$(git hash-object -w -- "$FILE")
 
