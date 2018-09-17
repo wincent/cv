@@ -68,6 +68,7 @@ class HTML {
       <html lang="${this._language}">
       <head>
       <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>
         ${this._escape(`${this.info.Author} — ${this.info.Title}`)}
       </title>
@@ -76,7 +77,7 @@ class HTML {
         @import url('${fonts.playfair}');
         body {
           font-family: 'Quattrocento', serif;
-          padding: 0 5em 0 5em;
+          padding: 0 1em 0 1em;
         }
         h1, h2 {
           font-family: 'Playfair Display', serif;
@@ -89,6 +90,17 @@ class HTML {
         p {
           margin: .5em 0 .5em 0;
         }
+        @media (min-width: 400px) {
+          body {
+            padding: 0 2em 0 2em;
+          }
+        }
+        @media (min-width: 480px) {
+          body {
+            padding: 0 5em 0 5em;
+          }
+        }
+
       </style>
       <body>
       <header>
