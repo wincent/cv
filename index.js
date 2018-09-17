@@ -121,25 +121,33 @@ class Markdown {
     this._content = '';
   }
 
+  _escape(string) {
+    // gh-pages mangles UTF-8 in Markdown files.
+    return string.replace(
+      /[\u00a0-\u9999<>\&]/gim,
+      c => '&#' + c.charCodeAt(0) + ';',
+    );
+  }
+
   header(name, content, email) {
     this._content +=
       `
-      **${name}**
-      ${content.join('\n')}
-      [${email}](mailto:${email})
+      **${this._escape(name)}**
+      ${content.map(line => this._escape(line)).join('\n')}
+      [${this._escape(email)}](mailto:${this._escape(email)})
     `.replace(/^\s+/gm, '') + '\n';
   }
 
   heading(text, options = {}) {
-    this._content += `## ${text}\n\n`;
+    this._content += `## ${this._escape(text)}\n\n`;
   }
 
   subHeading(text) {
-    this._content += `### ${text}\n\n`;
+    this._content += `### ${this._escape(text)}\n\n`;
   }
 
   para(text) {
-    this._content += `${text}\n\n`;
+    this._content += `${this._escape(text)}\n\n`;
   }
 
   write(outfile) {
