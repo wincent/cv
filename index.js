@@ -267,10 +267,6 @@ function build({doc, language, private} = {}) {
     return dateString.toString().replace(/^(\d{4}).*/, '$1');
   };
 
-  const capitalize = string => {
-    return string.slice(0, 1).toUpperCase() + string.slice(1);
-  };
-
   doc.header(
     data.identity.name,
     [
@@ -312,9 +308,7 @@ function build({doc, language, private} = {}) {
 
   doc.heading(data.skills.label);
   Object.values(data.skills.categories).forEach(category => {
-    doc.para(
-      capitalize(category.label) + ': ' + category.items.join(', ') + '.',
-    );
+    doc.para(category.label + ': ' + category.items.join(', ') + '.');
   });
 
   const outfile = `${private ? 'private' : 'public'}/cv.${language}`;
