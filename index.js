@@ -56,6 +56,12 @@ class HTML {
   }
 
   header(name, content, email) {
+    const fonts = {
+      quattrocentro:
+        'https://fonts.googleapis.com/css?family=Quattrocento&subset=latin-ext',
+      playfair:
+        'https://fonts.googleapis.com/css?family=Playfair+Display:400,700&subset=latin-ext',
+    };
     this._content +=
       `
       <!DOCTYPE html>
@@ -66,8 +72,22 @@ class HTML {
         ${this._escape(`${this.info.Author} — ${this.info.Title}`)}
       </title>
       <style>
+        @import url('${fonts.quattrocentro}');
+        @import url('${fonts.playfair}');
         body {
-          font-family: sans-serif;
+          font-family: 'Quattrocento', serif;
+          padding: 0 5em 0 5em;
+        }
+        h1, h2 {
+          font-family: 'Playfair Display', serif;
+          font-size: 1em;
+          margin-bottom: 0;
+        }
+        header {
+          text-align: right;
+        }
+        p {
+          margin: .5em 0 .5em 0;
         }
       </style>
       <body>
@@ -79,8 +99,7 @@ class HTML {
   }
 
   heading(text, options = {}) {
-    // TODO: style
-    this._content += `<h1>${this._escape(text)}</h1>\n`;
+    this._content += `<h1>${this._escape(text.toUpperCase())}</h1>\n`;
   }
 
   subHeading(text) {
