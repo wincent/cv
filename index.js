@@ -56,7 +56,7 @@ class HTML {
   }
 
   header(name, content, email) {
-    this._content =
+    this._content +=
       `
       <!DOCTYPE html>
       <html lang="${this._language}">
@@ -103,7 +103,7 @@ class Markdown {
   }
 
   header(name, content, email) {
-    this._content =
+    this._content +=
       `
       **${name}**
       ${content.join('\n')}
@@ -204,7 +204,7 @@ class Plaintext {
   }
 
   header(name, content, email) {
-    this._content =
+    this._content +=
       `
       ${name}
       ${content.join('\n')}
