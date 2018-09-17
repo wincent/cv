@@ -293,6 +293,8 @@ function build({doc, language, private} = {}) {
   );
   doc.info.Title = 'Curriculum Vitae';
   doc.info.Author = data.identity.name;
+  doc.info.CreationDate = new Date(Date.parse('2018-09-15'));
+  doc.info.ModDate = new Date();
 
   doc.header(
     data.identity.name,
