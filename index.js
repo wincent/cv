@@ -39,6 +39,95 @@ function localize(object, language) {
   return object;
 }
 
+class HTML {
+  constructor() {
+    this.info = {};
+    this._content = '';
+  }
+
+  _escape(html) {
+    return html
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  header(name, content, email) {
+    // TODO: set lang, obviously
+    this._content =
+      `
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+      <meta charset="utf-8">
+      <title>
+        ${this._escape(`${this.info.Author} — ${this.info.Title}`)}
+      </title>
+      <style>
+        body {
+          font-family: sans-serif;
+        }
+      </style>
+      <body>
+      <header>
+      <h1>${this._escape(name)}</h1>
+      ${content.map(line => `<p>${this._escape(line)}</p>\n`)}
+      <p><a href="mailto:${this._escape(email)}">${this._escape(email)}</a>
+    `.replace(/^\s+/gm, '') + '</header>\n';
+  }
+
+  heading(text, options = {}) {
+    // TODO: style
+    this._content += `<h1>${this._escape(text)}</h1>\n`;
+  }
+
+  subHeading(text) {
+    this._content += `<h2>${this._escape(text)}</h2>\n`;
+  }
+
+  para(text) {
+    this._content += `<p>${this._escape(text)}</p>\n`;
+  }
+
+  write(outfile) {
+    fs.writeFileSync(`${outfile}.html`, this._content.trim() + '\n');
+  }
+}
+
+class Markdown {
+  constructor() {
+    this.info = {};
+    this._content = '';
+  }
+
+  header(name, content, email) {
+    this._content =
+      `
+      **${name}**
+      ${content.join('\n')}
+      [${email}](mailto:${email})
+    `.replace(/^\s+/gm, '') + '\n';
+  }
+
+  heading(text, options = {}) {
+    this._content += `## ${text}\n\n`;
+  }
+
+  subHeading(text) {
+    this._content += `### ${text}\n\n`;
+  }
+
+  para(text) {
+    this._content += `${text}\n\n`;
+  }
+
+  write(outfile) {
+    fs.writeFileSync(`${outfile}.md`, this._content.trim() + '\n');
+  }
+}
+
 class PDF {
   constructor() {
     this.doc = new PDFDocument();
@@ -162,38 +251,6 @@ class Plaintext {
   }
 }
 
-class Markdown {
-  constructor() {
-    this.info = {};
-    this._content = '';
-  }
-
-  header(name, content, email) {
-    this._content =
-      `
-      **${name}**
-      ${content.join('\n')}
-      [${email}](mailto:${email})
-    `.replace(/^\s+/gm, '') + '\n';
-  }
-
-  heading(text, options = {}) {
-    this._content += `## ${text}\n\n`;
-  }
-
-  subHeading(text) {
-    this._content += `### ${text}\n\n`;
-  }
-
-  para(text) {
-    this._content += `${text}\n\n`;
-  }
-
-  write(outfile) {
-    fs.writeFileSync(`${outfile}.md`, this._content.trim() + '\n');
-  }
-}
-
 function build({doc, language, private} = {}) {
   const data = localize(
     {
@@ -283,4 +340,7 @@ rawData.languages.forEach(language => {
 
   build({doc: new Plaintext(), language});
   build({doc: new Plaintext(), language, private: true});
+
+  build({doc: new HTML(), language});
+  build({doc: new HTML(), language, private: true});
 });
