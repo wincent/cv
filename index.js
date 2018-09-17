@@ -73,7 +73,7 @@ class HTML {
       <body>
       <header>
       <h1>${this._escape(name)}</h1>
-      ${content.map(line => `<p>${this._escape(line)}</p>\n`)}
+      ${content.map(line => `<p>${this._escape(line)}</p>\n`).join('\n')}
       <p><a href="mailto:${this._escape(email)}">${this._escape(email)}</a>
     `.replace(/^\s+/gm, '') + '</header>\n';
   }
