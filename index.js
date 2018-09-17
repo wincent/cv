@@ -251,6 +251,11 @@ class Plaintext {
   }
 }
 
+function date(dateString) {
+  // We only want to show the year.
+  return dateString.toString().replace(/^(\d{4}).*/, '$1');
+}
+
 function build({doc, language, private} = {}) {
   const data = localize(
     {
@@ -261,11 +266,6 @@ function build({doc, language, private} = {}) {
   );
   doc.info.Title = 'Curriculum Vitae';
   doc.info.Author = data.identity.name;
-
-  const date = dateString => {
-    // We only want to show the year.
-    return dateString.toString().replace(/^(\d{4}).*/, '$1');
-  };
 
   doc.header(
     data.identity.name,
