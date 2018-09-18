@@ -36,6 +36,14 @@ try {
   };
 }
 
+validate(
+  {
+    languages: rawData.languages,
+    ...pii,
+  },
+  schema.pii,
+);
+
 function localize(object, language) {
   if (typeof object === 'object' && object !== null) {
     if (rawData.languages.every(l => typeof object[l] === 'string')) {

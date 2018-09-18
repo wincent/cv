@@ -150,5 +150,37 @@
         "required": ["label", "categories"]
       }
     }
+  },
+  "pii": {
+    "definitions": {
+      "localized": {
+        "$id": "#localized",
+        "type": "object",
+        "propertyNames": {"enum": {"$data": "/languages"}},
+        "required": {"$data": "/languages"},
+        "patternProperties": {
+          ".*": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "properties": {
+      "languages": {
+        "description": "This property need not exist in the input file, but rather gets dynamically copied from the 'cv' source at runtime.",
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "string",
+          "pattern": "^[a-z]{2}$"
+        }
+      },
+      "street": {"type": "string"},
+      "zip": {"type": "number"},
+      "city": {"type": "string"},
+      "country": {"$ref": "#localized"},
+      "phone": {"type": "string"}
+    },
+    "additionalProperties": false,
+    "required": ["street", "zip", "city", "country", "phone"]
   }
 }
