@@ -5,15 +5,19 @@ const PDFDocument = require('pdfkit');
 
 const schema = require('./schema.json');
 
-const rawData = yaml.safeLoad(fs.readFileSync('./cv.yml', 'utf8'));
-const ajv = new Ajv({allErrors: true, $data: true});
-const validate = ajv.compile(schema);
-const valid = validate(rawData);
-if (!valid) {
-  console.log(validate.errors);
-  console.log('Input YAML does not conform to the schema');
-  process.exit(1);
+function validate(data, schema) {
+  const ajv = new Ajv({allErrors: true, $data: true});
+  const validate = ajv.compile(schema);
+  const valid = validate(data);
+  if (!valid) {
+    console.log(validate.errors);
+    console.log('Input YAML does not conform to the schema');
+    process.exit(1);
+  }
 }
+
+const rawData = yaml.safeLoad(fs.readFileSync('./cv.yml', 'utf8'));
+validate(rawData, schema.cv);
 
 let pii;
 try {
