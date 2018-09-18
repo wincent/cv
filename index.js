@@ -38,8 +38,8 @@ try {
 
 validate(
   {
-    languages: rawData.languages,
     ...pii,
+    languages: rawData.languages,
   },
   schema.pii,
 );
