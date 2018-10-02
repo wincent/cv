@@ -3,21 +3,21 @@
 
 ## Perfil
 
-Desarrollador
+Ingeniero de Software
 
 ## Experiencia
 
-### Desarrollador de Interfaces de Usuario, Facebook; Menlo Park, California &#8212; 2014&#8211;2018
+### Ingeniero de Interfaces de Usuario, Facebook; Menlo Park, California &#8212; 2014&#8211;2018
 
-Coder, mentor and tech lead working on Product Infrastructure &#8212; from open source JavaScript libraries (Relay, GraphQL) to internal build and developer tooling &#8212; and Ads Interfaces (among the largest and full-featured React applications in the world).
+Fui desarrollador, mentor y l&#237;der tecnol&#243;gico. En infraestructura de productos, desarroll&#233; librer&#237;as en JavaScript de c&#243;digo abierto (Relay, GraphQL) y herramientas internas de compilaci&#243;n y desarrollo. En Interfaces de Gesti&#243;n de Publicidad, trabaj&#233; en un aplicaciones de React que figuran entre las m&#225;s grandes y complejas del mundo.
 
 ### Director de Ingenier&#237;a, Causes; San Francisco, California &#8212; 2011&#8211;2013
 
-Key player in the formation and maintenance of engineering culture focused on quality, pragmatism, and individual and team development. Mentored 10 direct reports. Full-stack development of many user-facing features and underlying infrastructure. Implemented systematic code review (via Gerrit). Served as Tech Lead, Coach and Mentor.
+Interpret&#233; un papel decisivo en la formaci&#243;n y mantenimiento de la cultura y procesos de ingenier&#237;a, caracterizados por la calidad, el pragmatismo y el desarrollo individual y del equipo. En capacidad de director lider&#233; un equipo de 10 ingenieros.  Desarroll&#233; c&#243;digo a todos los niveles desde las interfaces de usuario hasta la infraestructura subyacente. Implant&#233; revisi&#243;n sistem&#225;tica de de c&#243;digo (a trav&#233;s de Gerrit) y serv&#237; como director, l&#237;der tecnol&#243;gico y mentor.
 
 ### Fundador/Aut&#243;nomo, wincent.com; Australia &#8212; 2002&#8211;2011
 
-Developed macOS applications in C and Objective-C, Rails applications, and a large number of open source projects.
+Desarroll&#233; aplicaciones de macOS en C y Objective-C, aplicaciones de Rails y una gran cantidad de proyectos de c&#243;digo abierto.
 
 ## Formaci&#243;n
 
