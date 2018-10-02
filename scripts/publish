@@ -15,13 +15,16 @@ for FILE in $(find public -type f -and -not -name '.*'); do
     --cacheinfo "${MODE},${BLOB_ID},${NAME}"
 done
 
+
 # Create tree object from index.
 TREE_ID=$(env GIT_INDEX_FILE="$INDEX" git write-tree)
 
 # Make the commit.
 DATE=$(date)
 PARENT=$(git rev-parse refs/heads/gh-pages)
-COMMIT=$(git commit-tree "$TREE_ID" -p "$PARENT" -m "Build $DATE")
+SOURCE=$(git describe --always --dirty)
+COMMIT=$(builtin echo "Build $DATE\n\nFrom $SOURCE." | git commit-tree "$TREE_ID" -p "$PARENT" -F -)
+
 git update-ref refs/heads/gh-pages "$COMMIT"
 
 echo "Created commit: ${COMMIT}\n"
