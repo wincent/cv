@@ -30,3 +30,12 @@ git update-ref refs/heads/gh-pages "$COMMIT"
 echo "Created commit: ${COMMIT}\n"
 
 git log --raw -1 refs/heads/gh-pages
+
+if $(git diff --quiet "$COMMIT" "$PARENT"); then
+  BOLD=$(tput bold)
+  RED=$(tput setaf 1)
+  RESET=$(tput sgr0)
+  echo "\n${BOLD}${RED}WARNING: CREATED EMPTY COMMIT${RESET}\n"
+  echo "If this was in error, reset using:"
+  echo "  git update-ref refs/heads/gh-pages $PARENT"
+fi
