@@ -27,7 +27,7 @@ COMMIT=$(builtin echo "Build $DATE\n\nFrom $SOURCE." | git commit-tree "$TREE_ID
 
 git update-ref refs/heads/gh-pages "$COMMIT"
 
-echo "Created commit: ${COMMIT}\n"
+echo "Created commit: $(git rev-parse --short "$COMMIT")\n"
 
 git log --raw -1 refs/heads/gh-pages
 
@@ -37,5 +37,5 @@ if $(git diff --quiet "$COMMIT" "$PARENT"); then
   RESET=$(tput sgr0)
   echo "\n${BOLD}${RED}WARNING: CREATED EMPTY COMMIT${RESET}\n"
   echo "If this was in error, reset using:"
-  echo "  git update-ref refs/heads/gh-pages $PARENT"
+  echo "  git update-ref refs/heads/gh-pages $(git rev-parse --short "$PARENT")"
 fi
