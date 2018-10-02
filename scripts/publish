@@ -29,4 +29,4 @@ git update-ref refs/heads/gh-pages "$COMMIT"
 
 echo "Created commit: ${COMMIT}\n"
 
-git whatchanged -1 refs/heads/gh-pages
+git log --raw -1 refs/heads/gh-pages
