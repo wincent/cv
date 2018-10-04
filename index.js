@@ -127,6 +127,7 @@ class HTML {
         }
 
       </style>
+      </head>
       <body>
       <header>
       <h1>${this._escape(name)}</h1>
