@@ -93,6 +93,7 @@ class HTML {
       <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
       <title>
         ${this._escape(`${this.info.Author} — ${this.info.Title}`)}
       </title>
