@@ -15,7 +15,7 @@ Ingeniero de Interfaces de Usuario, Facebook; Menlo Park, California — 2014–
 Fui desarrollador, mentor y líder tecnológico. En infraestructura de
 productos, desarrollé librerías en JavaScript de código abierto (Relay,
 GraphQL) y herramientas internas de compilación y desarrollo. En
-Interfaces de Gestión de Publicidad, trabajé en un aplicaciones de React
+Interfaces de Gestión de Publicidad, trabajé en aplicaciones de React
 que figuran entre las más grandes y complejas del mundo.
 
 Director de Ingeniería, Causes; San Francisco, California — 2011–2013

@@ -9,7 +9,7 @@ Ingeniero de Software
 
 ### Ingeniero de Interfaces de Usuario, Facebook; Menlo Park, California &#8212; 2014&#8211;2018
 
-Fui desarrollador, mentor y l&#237;der tecnol&#243;gico. En infraestructura de productos, desarroll&#233; librer&#237;as en JavaScript de c&#243;digo abierto (Relay, GraphQL) y herramientas internas de compilaci&#243;n y desarrollo. En Interfaces de Gesti&#243;n de Publicidad, trabaj&#233; en un aplicaciones de React que figuran entre las m&#225;s grandes y complejas del mundo.
+Fui desarrollador, mentor y l&#237;der tecnol&#243;gico. En infraestructura de productos, desarroll&#233; librer&#237;as en JavaScript de c&#243;digo abierto (Relay, GraphQL) y herramientas internas de compilaci&#243;n y desarrollo. En Interfaces de Gesti&#243;n de Publicidad, trabaj&#233; en aplicaciones de React que figuran entre las m&#225;s grandes y complejas del mundo.
 
 ### Director de Ingenier&#237;a, Causes; San Francisco, California &#8212; 2011&#8211;2013
 
