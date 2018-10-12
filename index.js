@@ -195,8 +195,8 @@ class Markdown {
 
 class PDF {
   constructor() {
-    this.doc = new PDFDocument();
-    this.doc
+    this._doc = new PDFDocument();
+    this._doc
       .registerFont(
         'baskerville',
         'fonts/Quattrocento/Quattrocento-Regular.ttf',
@@ -206,11 +206,11 @@ class PDF {
         'didot-regular',
         'fonts/Playfair_Display/PlayfairDisplay-Regular.ttf',
       );
-    this.info = this.doc.info;
+    this.info = this._doc.info;
   }
 
   header(name, content, email) {
-    let header = this.doc
+    let header = this._doc
       .font('didot-regular')
       .fontSize(16)
       .text(name, {align: 'right'})
@@ -229,19 +229,19 @@ class PDF {
   }
 
   heading(text, options = {}) {
-    this.doc
+    this._doc
       .font('didot')
       .fontSize(11)
       .moveDown()
       .text(text.toUpperCase(), {characterSpacing: 2});
     if (options.collapse) {
       // HACK alert!
-      this.doc.moveUp();
+      this._doc.moveUp();
     }
   }
 
   subHeading(text) {
-    this.doc
+    this._doc
       .font('didot')
       .fontSize(11)
       .moveDown()
@@ -249,7 +249,7 @@ class PDF {
   }
 
   para(text) {
-    this.doc
+    this._doc
       .font('baskerville')
       .fontSize(12)
       .lineGap(2)
@@ -257,8 +257,8 @@ class PDF {
   }
 
   write(outfile) {
-    this.doc.pipe(fs.createWriteStream(`${outfile}.pdf`));
-    this.doc.end();
+    this._doc.pipe(fs.createWriteStream(`${outfile}.pdf`));
+    this._doc.end();
   }
 }
 
