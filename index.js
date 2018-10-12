@@ -321,6 +321,14 @@ function date(dateString) {
   return dateString.toString().replace(/^(\d{4}).*/, '$1');
 }
 
+function printProgress() {
+  process.stdout.write('.');
+}
+
+function printDone() {
+  process.stdout.write('\n');
+}
+
 function build({doc, language, private} = {}) {
   const data = localize(
     {
@@ -380,6 +388,8 @@ function build({doc, language, private} = {}) {
 
   const outfile = `${private ? 'private' : 'public'}/cv.${language}`;
   doc.write(outfile);
+
+  printProgress();
 }
 
 function mkdir(string) {
@@ -439,4 +449,6 @@ rawData.languages.forEach(language => {
 
   // Add default index page.
   fs.copyFileSync('public/cv.en.html', 'public/index.html');
+  printProgress();
 });
+printDone();
