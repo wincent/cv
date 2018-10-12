@@ -329,7 +329,7 @@ function printDone() {
   process.stdout.write('\n');
 }
 
-function build({doc, language, private} = {}) {
+function build({doc, full, language, private} = {}) {
   const data = localize(
     {
       ...rawData,
@@ -381,12 +381,21 @@ function build({doc, language, private} = {}) {
     },
   );
 
+  if (full) {
+    doc.heading(data.awards.label);
+    data.awards.items.forEach(doc.para, doc);
+  }
+
   doc.heading(data.skills.label);
   Object.values(data.skills.categories).forEach(category => {
     doc.para(category.label + ': ' + category.items.join(', ') + '.');
   });
 
-  const outfile = `${private ? 'private' : 'public'}/cv.${language}`;
+  const outfile =
+    (private ? 'private' : 'public') +
+    '/cv' +
+    (full ? '-full' : '') +
+    `.${language}`;
   doc.write(outfile);
 
   printProgress();
@@ -436,16 +445,24 @@ mkdir('public');
 mkdir('private');
 rawData.languages.forEach(language => {
   build({doc: new PDF(), language});
+  build({doc: new PDF(), language, full: true});
   build({doc: new PDF(), language, private: true});
+  build({doc: new PDF(), language, full: true, private: true});
 
   build({doc: new Markdown(), language});
+  build({doc: new Markdown(), language, full: true});
   build({doc: new Markdown(), language, private: true});
+  build({doc: new Markdown(), language, full: true, private: true});
 
   build({doc: new Plaintext(), language});
+  build({doc: new Plaintext(), language, full: true});
   build({doc: new Plaintext(), language, private: true});
+  build({doc: new Plaintext(), language, full: true, private: true});
 
   build({doc: new HTML(language), language});
+  build({doc: new HTML(language), language, full: true});
   build({doc: new HTML(language), language, private: true});
+  build({doc: new HTML(language), language, full: true, private: true});
 
   // Add default index page.
   fs.copyFileSync('public/cv.en.html', 'public/index.html');

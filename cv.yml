@@ -107,11 +107,15 @@ education:
       qualification: Bachelor of Education (UP/LS)(Hons)
 
 awards:
+  label:
+    en: Awards
+    es: Premios
 
-  - Faculty of Education, Humanities, Law and Theology Staff Prize in English (Flinders University)
-  - University Medal (Flinders University)
-  - Australian College of English Prize in Teacher Education
-  - Golden Key Scholar Award
+  items:
+    - Faculty of Education, Humanities, Law and Theology Staff Prize in English (Flinders University)
+    - University Medal (Flinders University)
+    - Australian College of English Prize in Teacher Education
+    - Golden Key Scholar Award
 
 publications:
 
