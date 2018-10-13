@@ -73,20 +73,47 @@ function stripProtocol(url) {
  */
 const PRESENCE_TYPES = ['github', 'twitter', 'website'];
 
+/**
+ * Mark a string as safe for raw interpolation (without escaping) within
+ * an HTML output string.
+ */
+function raw(string) {
+  return {
+    __safe: true,
+    toString: () => string,
+  };
+}
+
+/**
+ * Tagged template literal function for emitting HTML that escapes all
+ * interpolated values unless explicitly marked as safe using the `raw()`
+ * helper.
+ */
+function html(strings, ...interpolations) {
+  return strings.reduce((output, string, i) => {
+    output += string;
+
+    if (i < interpolations.length) {
+      const interpolation = interpolations[i];
+      output += interpolation.__safe
+        ? interpolation.toString()
+        : interpolation
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
+    return output;
+  }, '');
+}
+
 class HTML {
   constructor(language) {
     this.info = {};
     this._content = '';
     this._language = language;
-  }
-
-  _escape(html) {
-    return html
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#39;');
   }
 
   header(name, content, email, presence) {
@@ -100,16 +127,14 @@ class HTML {
     const links = PRESENCE_TYPES.map(site => {
       const url = presence[site];
       if (url) {
-        return `<p><a href="${this._escape(url)}">${this._escape(
-          stripProtocol(url),
-        )}</a></p>`;
+        return html`<p><a href="${url}">${stripProtocol(url)}</a></p>`;
       }
     })
       .filter(Boolean)
       .join('\n');
 
     this._content +=
-      `
+      html`
       <!DOCTYPE html>
       <html lang="${this._language}">
       <head>
@@ -117,7 +142,7 @@ class HTML {
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
       <title>
-        ${this._escape(`${this.info.Author} — ${this.info.Title}`)}
+        ${this.info.Author} — ${this.info.Title}
       </title>
       <style>
         @import url('${fonts.quattrocentro}');
@@ -152,31 +177,29 @@ class HTML {
       </head>
       <body>
       <header>
-      <h1>${this._escape(name)}</h1>
-      ${content.map(line => `<p>${this._escape(line)}</p>\n`).join('\n')}
-      <p><a href="mailto:${this._escape(email)}">${this._escape(email)}</a>
-      ${links}
+      <h1>${name}</h1>
+      ${raw(content.map(line => html`<p>${line}</p>\n`).join('\n'))}
+      <p><a href="mailto:${email}">${email}</a>
+      ${raw(links)}
     `
         .trim()
         .replace(/^\s+/gm, '') + '\n</header>\n';
   }
 
   heading(text, options = {}) {
-    this._content += `<h1>${this._escape(text.toUpperCase())}</h1>\n`;
+    this._content += html`<h1>${text.toUpperCase()}</h1>\n`;
   }
 
   subHeading(text) {
-    this._content += `<h2>${this._escape(text)}</h2>\n`;
+    this._content += html`<h2>${text}</h2>\n`;
   }
 
   link(text, target) {
-    this._content += `<p><a href="${this._escape(target)}">${this._escape(
-      text,
-    )}</a></p>\n`;
+    this._content += html`<p><a href="${target}">${text}</a></p>\n`;
   }
 
   para(text, _options) {
-    this._content += `<p>${this._escape(text)}</p>\n`;
+    this._content += html`<p>${text}</p>\n`;
   }
 
   write(outfile) {
