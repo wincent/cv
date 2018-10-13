@@ -195,6 +195,7 @@ class Markdown {
 
 class PDF {
   constructor() {
+    this.info = {};
     this._reset();
   }
 
@@ -202,6 +203,7 @@ class PDF {
     this._commands.push({
       command,
       args,
+      y: this._doc.y,
     });
   }
 
@@ -218,7 +220,40 @@ class PDF {
         'didot-regular',
         'fonts/Playfair_Display/PlayfairDisplay-Regular.ttf',
       );
-    this.info = this._doc.info;
+  }
+
+  _rewind() {
+    const commands = [...this._commands];
+
+    // Scan backwards looking for last heading or subheading and insert a
+    // page break before it.
+    for (let i = commands.length - 1; i; i--) {
+      const command = commands[i].command;
+      if (command === 'heading' || command === 'subHeading') {
+        if (i > 0) {
+          if (commands[i - 1].command !== 'pageBreak') {
+            this._reset();
+            commands.forEach(({command, args}, j) => {
+              if (j === i) {
+                this.pageBreak();
+              }
+              this[command].apply(this, args);
+            });
+            return;
+          } else {
+            // We already tried inserting a break and still wound up in
+            // `_reset()`, so give up; the "unwanted" page break is
+            // probably fine.
+            return;
+          }
+        }
+      }
+    }
+  }
+
+  pageBreak() {
+    this._record('pageBreak');
+    this._doc.addPage();
   }
 
   header(name, content, email) {
@@ -251,7 +286,10 @@ class PDF {
   }
 
   subHeading(text) {
-    if (this._commands.length && this._commands[this._commands.length - 1].command === 'heading') {
+    if (
+      this._commands.length &&
+      this._commands[this._commands.length - 1].command === 'heading'
+    ) {
       this._doc.moveUp();
     }
     this._record('subHeading', arguments);
@@ -263,15 +301,26 @@ class PDF {
   }
 
   para(text) {
+    const last = this._commands.length
+      ? this._commands[this._commands.length - 1].y
+      : this._doc.y;
     this._record('para', arguments);
     this._doc
       .font('baskerville')
       .fontSize(12)
       .lineGap(2)
       .text(text);
+    if (this._doc.y < last) {
+      // This para bumped us onto a new page; let's try again, forcing a page
+      // break before a heading instead.
+      this._rewind();
+    }
   }
 
   write(outfile) {
+    Object.entries(this.info).forEach(([key, value]) => {
+      this._doc.info[key] = value;
+    });
     this._doc.pipe(fs.createWriteStream(`${outfile}.pdf`));
     this._doc.end();
   }
