@@ -78,10 +78,9 @@ const PRESENCE_TYPES = ['github', 'twitter', 'website'];
  * an HTML output string.
  */
 function raw(string) {
-  return {
-    __safe: true,
-    toString: () => string,
-  };
+  const safe = new String(string);
+  safe.__safe = true;
+  return safe;
 }
 
 /**
