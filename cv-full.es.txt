@@ -1,0 +1,64 @@
+Greg Hurrell
+greg@hurrell.net
+
+Perfil
+======
+
+Ingeniero de Software
+
+Experiencia
+===========
+
+Ingeniero de Interfaces de Usuario, Facebook; Menlo Park, California — 2014–2018
+--------------------------------------------------------------------------------
+
+Fui desarrollador, mentor y líder tecnológico. En infraestructura de
+productos, desarrollé librerías en JavaScript de código abierto (Relay,
+GraphQL) y herramientas internas de compilación y desarrollo. En
+Interfaces de Gestión de Publicidad, trabajé en aplicaciones de React
+que figuran entre las más grandes y complejas del mundo.
+
+Director de Ingeniería, Causes; San Francisco, California — 2011–2013
+---------------------------------------------------------------------
+
+Interpreté un papel decisivo en la formación y mantenimiento de la
+cultura y procesos de ingeniería, caracterizados por la calidad, el
+pragmatismo y el desarrollo individual y del equipo. En capacidad de
+director lideré un equipo de 10 ingenieros.  Desarrollé código a todos
+los niveles desde las interfaces de usuario hasta la infraestructura
+subyacente. Implanté revisión sistemática de de código (a través de
+Gerrit) y serví como director, líder tecnológico y mentor.
+
+Fundador/Autónomo, wincent.com; Australia — 2002–2011
+-----------------------------------------------------
+
+Desarrollé aplicaciones de macOS en C y Objective-C, aplicaciones de
+Rails y una gran cantidad de proyectos de código abierto.
+
+Formación
+=========
+
+Flinders University, 1999 — Bachelor of Education (UP/LS)(Hons)
+
+Premios
+=======
+
+Faculty of Education, Humanities, Law and Theology Staff Prize in
+English (Flinders University)
+
+University Medal (Flinders University)
+
+Australian College of English Prize in Teacher Education
+
+Golden Key Scholar Award
+
+Conocimiento
+============
+
+Lenguajes de programación: JavaScript, Ruby, C, Haskell, ReasonML, PHP,
+Perl, Objective-C.
+
+Herramientas: HTML/CSS, Zsh/Bash, Vim, Git/Mercurial, MySQL/Redis,
+Ansible.
+
+Idiomas: English, Spanish.
