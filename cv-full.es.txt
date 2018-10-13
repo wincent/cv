@@ -66,3 +66,14 @@ https://youtu.be/oPSuvaYmXBY
 
 Migrating Rails with a Large Codebase — 2012
 https://youtu.be/qgCM2bca49w
+
+Conocimiento
+============
+
+Lenguajes de programación: JavaScript, Ruby, C, Haskell, ReasonML, PHP,
+Perl, Objective-C.
+
+Herramientas: HTML/CSS, Zsh/Bash, Vim, Git/Mercurial, MySQL/Redis,
+Ansible.
+
+Idiomas: English, Spanish.

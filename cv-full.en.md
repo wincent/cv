@@ -43,3 +43,11 @@ Golden Key Scholar Award
 [Relay Deep Dive &#8212; 2016](https://youtu.be/oPSuvaYmXBY)
 
 [Migrating Rails with a Large Codebase &#8212; 2012](https://youtu.be/qgCM2bca49w)
+
+## Skills
+
+Programming languages: JavaScript, Ruby, C, Haskell, ReasonML, PHP, Perl, Objective-C.
+
+Tools: HTML/CSS, Zsh/Bash, Vim, Git/Mercurial, MySQL/Redis, Ansible.
+
+Spoken languages: English, Spanish.

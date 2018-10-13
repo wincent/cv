@@ -25,3 +25,11 @@ Developed macOS applications in C and Objective-C, Rails applications, and a lar
 ## Education
 
 Flinders University, 1999 &#8212; Bachelor of Education (UP/LS)(Hons)
+
+## Skills
+
+Programming languages: JavaScript, Ruby, C, Haskell, ReasonML, PHP, Perl, Objective-C.
+
+Tools: HTML/CSS, Zsh/Bash, Vim, Git/Mercurial, MySQL/Redis, Ansible.
+
+Spoken languages: English, Spanish.
