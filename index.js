@@ -63,6 +63,10 @@ function localize(object, language) {
   return object;
 }
 
+function stripProtocol(url) {
+  return url.replace(/^(?:[a-z]+:)?\/\//, '');
+}
+
 class HTML {
   constructor(language) {
     this.info = {};
@@ -79,13 +83,26 @@ class HTML {
       .replace(/'/g, '&#39;');
   }
 
-  header(name, content, email) {
+  header(name, content, email, presence) {
     const fonts = {
       quattrocentro:
         'https://fonts.googleapis.com/css?family=Quattrocento&subset=latin-ext',
       playfair:
         'https://fonts.googleapis.com/css?family=Playfair+Display:400,700&subset=latin-ext',
     };
+
+    const links = ['github', 'twitter', 'website']
+      .map(site => {
+        const url = presence[site];
+        if (url) {
+          return (
+            `<p><a href="${this._escape(url)}">${this._escape(stripProtocol(url))}</a></p>`
+          );
+        }
+      })
+      .filter(Boolean)
+      .join('\n');
+
     this._content +=
       `
       <!DOCTYPE html>
@@ -133,7 +150,8 @@ class HTML {
       <h1>${this._escape(name)}</h1>
       ${content.map(line => `<p>${this._escape(line)}</p>\n`).join('\n')}
       <p><a href="mailto:${this._escape(email)}">${this._escape(email)}</a>
-    `.replace(/^\s+/gm, '') + '</header>\n';
+      ${links}
+    `.trim().replace(/^\s+/gm, '') + '\n</header>\n';
   }
 
   heading(text, options = {}) {
@@ -172,13 +190,26 @@ class Markdown {
     );
   }
 
-  header(name, content, email) {
+  header(name, content, email, presence) {
+    const links = ['github', 'twitter', 'website']
+      .map(site => {
+        const url = presence[site];
+        if (url) {
+          return (
+            `[${this._escape(stripProtocol(url))}](${this._escape(url)})`
+          );
+        }
+      })
+      .filter(Boolean)
+      .join('\n');
+
     this._content +=
       `
       **${this._escape(name)}**
       ${content.map(line => this._escape(line)).join('\n')}
       [${this._escape(email)}](mailto:${this._escape(email)})
-    `.replace(/^\s+/gm, '') + '\n';
+      ${links}
+    `.trim().replace(/^\s+/gm, '') + '\n\n';
   }
 
   heading(text, options = {}) {
@@ -265,7 +296,7 @@ class PDF {
     this._doc.addPage();
   }
 
-  header(name, content, email) {
+  header(name, content, email, presence) {
     this._record('header', arguments);
     let header = this._doc
       .font('didot-regular')
@@ -283,6 +314,27 @@ class PDF {
       align: 'right',
       link: `mailto:${email}`,
     });
+
+    if (presence.github) {
+      header = header.text(stripProtocol(presence.github), {
+        align: 'right',
+        link: presence.github,
+      });
+    }
+
+    if (presence.twitter) {
+      header = header.text(stripProtocol(presence.twitter), {
+        align: 'right',
+        link: presence.twitter,
+      });
+    }
+
+    if (presence.website) {
+      header = header.text(stripProtocol(presence.website), {
+        align: 'right',
+        link: presence.website,
+      });
+    }
   }
 
   heading(text, options = {}) {
@@ -345,13 +397,20 @@ class Plaintext {
     this._content = '';
   }
 
-  header(name, content, email) {
+  header(name, content, email, presence) {
+    const urls = ['github', 'twitter', 'website']
+      .map(site => (
+        presence[site] ? stripProtocol(presence[site]) : null
+      ))
+      .filter(Boolean)
+      .join('\n');
     this._content +=
       `
       ${name}
       ${content.join('\n')}
       ${email}
-    `.replace(/^\s+/gm, '') + '\n';
+      ${urls}
+    `.trim().replace(/^\s+/gm, '') + '\n\n';
   }
 
   _underline(text, underline) {
@@ -435,6 +494,7 @@ function build({doc, full, language, private} = {}) {
         : []),
     ],
     data.identity.email,
+    data.presence,
   );
 
   doc.heading(data.profile.label);
