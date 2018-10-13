@@ -118,18 +118,22 @@ awards:
     - Golden Key Scholar Award
 
 publications:
+  label:
+    en: Publications
+    es: Publicaciones
 
-  - title: Relay 2 - simpler, faster, and more predictable
-    link: https://youtu.be/OEfUBN9dAI8
-    when: 2016-08
+  items:
+    - title: Relay 2 - simpler, faster, and more predictable
+      link: https://youtu.be/OEfUBN9dAI8
+      when: 2016-08
 
-  - title: Relay Deep Dive
-    link: https://youtu.be/oPSuvaYmXBY
-    when: 2016-04
+    - title: Relay Deep Dive
+      link: https://youtu.be/oPSuvaYmXBY
+      when: 2016-04
 
-  - title: Migrating Rails with a Large Codebase
-    link: https://youtu.be/qgCM2bca49w
-    when: 2012-08
+    - title: Migrating Rails with a Large Codebase
+      link: https://youtu.be/qgCM2bca49w
+      when: 2012-08
 
 skills:
   label:

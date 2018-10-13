@@ -144,7 +144,12 @@ class HTML {
     this._content += `<h2>${this._escape(text)}</h2>\n`;
   }
 
-  para(text) {
+  link(text, target) {
+    this._content +=
+      `<p><a href="${this._escape(target)}">${this._escape(text)}</a></p>\n`;
+  }
+
+  para(text, _options) {
     this._content += `<p>${this._escape(text)}</p>\n`;
   }
 
@@ -184,7 +189,11 @@ class Markdown {
     this._content += `### ${this._escape(text)}\n\n`;
   }
 
-  para(text) {
+  link(text, target) {
+    this._content += `[${this._escape(text)}](${this._escape(target)})\n\n`;
+  }
+
+  para(text, _options) {
     this._content += `${this._escape(text)}\n\n`;
   }
 
@@ -300,7 +309,11 @@ class PDF {
       .text(text, {characterSpacing: 0.5});
   }
 
-  para(text) {
+  link(text, target) {
+    this.para(text, {link: target});
+  }
+
+  para(text, options = {}) {
     const last = this._commands.length
       ? this._commands[this._commands.length - 1].y
       : this._doc.y;
@@ -309,7 +322,7 @@ class PDF {
       .font('baskerville')
       .fontSize(12)
       .lineGap(2)
-      .text(text);
+      .text(text, options);
     if (this._doc.y < last) {
       // This para bumped us onto a new page; let's try again, forcing a page
       // break before a heading instead.
@@ -371,7 +384,11 @@ class Plaintext {
     }, '');
   }
 
-  para(text) {
+  link(text, target) {
+    this._content += `${this._wrap(text)}\n${target}\n\n`;
+  }
+
+  para(text, _options) {
     this._content += `${this._wrap(text)}\n\n`;
   }
 
@@ -453,6 +470,16 @@ function build({doc, full, language, private} = {}) {
     if (data.awards.items.length) {
       doc.heading(data.awards.label);
       data.awards.items.forEach(doc.para, doc);
+    }
+
+    if (data.publications.items.length) {
+      doc.heading(data.publications.label);
+      data.publications.items.forEach(({title, link, when}) => {
+        doc.link(
+          `${title} ${EMDASH} ${date(when)}`,
+          link
+        );
+      });
     }
   }
 

@@ -118,16 +118,23 @@
         }
       },
       "publications": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "title": {"type": "string"},
-            "link": {"format": "uri"},
-            "when": {"$ref": "#dateish"}
-          },
-          "required": ["title", "link", "when"]
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "label": {"$ref": "#localized"},
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "title": {"type": "string"},
+                "link": {"format": "uri"},
+                "when": {"$ref": "#dateish"}
+              },
+              "required": ["title", "link", "when"]
+            }
+          }
         }
       },
       "skills": {
