@@ -31,7 +31,8 @@ experience:
   label:
     en: Experience
     es: Experiencia
-  jobs:
+
+  items:
     - role:
         en: Front-End Engineer
         es: Ingeniero de Interfaces de Usuario
@@ -101,7 +102,7 @@ education:
     en: Education
     es: Formación
 
-  qualifications:
+  items:
     - institution: Flinders University
       graduated: 1999
       qualification: Bachelor of Education (UP/LS)(Hons)

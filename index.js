@@ -499,9 +499,9 @@ function build({doc, full, language, private} = {}) {
   const ENDASH = '\u2013';
   const EMDASH = '\u2014';
 
-  if (data.experience.jobs.length) {
+  if (data.experience.items.length) {
     doc.heading(data.experience.label);
-    data.experience.jobs.forEach(
+    data.experience.items.forEach(
       ({role, company, location, from, to, description}) => {
         doc.subHeading(
           `${role}, ${company}; ${location} ${EMDASH} ${date(
@@ -513,15 +513,11 @@ function build({doc, full, language, private} = {}) {
     );
   }
 
-  if (data.education.qualifications.length) {
+  if (data.education.items.length) {
     doc.heading(data.education.label);
-    data.education.qualifications.forEach(
-      ({institution, graduated, qualification}) => {
-        doc.para(
-          `${institution}, ${date(graduated)} ${EMDASH} ${qualification}`,
-        );
-      },
-    );
+    data.education.items.forEach(({institution, graduated, qualification}) => {
+      doc.para(`${institution}, ${date(graduated)} ${EMDASH} ${qualification}`);
+    });
   }
 
   if (full) {
