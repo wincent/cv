@@ -426,34 +426,42 @@ function build({doc, full, language, private} = {}) {
   const ENDASH = '\u2013';
   const EMDASH = '\u2014';
 
-  doc.heading(data.experience.label);
-  data.experience.jobs.forEach(
-    ({role, company, location, from, to, description}) => {
-      doc.subHeading(
-        `${role}, ${company}; ${location} ${EMDASH} ${date(
-          from,
-        )}${ENDASH}${date(to)}`,
-      );
-      doc.para(description);
-    },
-  );
-
-  doc.heading(data.education.label);
-  data.education.qualifications.forEach(
-    ({institution, graduated, qualification}) => {
-      doc.para(`${institution}, ${date(graduated)} ${EMDASH} ${qualification}`);
-    },
-  );
-
-  if (full) {
-    doc.heading(data.awards.label);
-    data.awards.items.forEach(doc.para, doc);
+  if (data.experience.jobs.length) {
+    doc.heading(data.experience.label);
+    data.experience.jobs.forEach(
+      ({role, company, location, from, to, description}) => {
+        doc.subHeading(
+          `${role}, ${company}; ${location} ${EMDASH} ${date(
+            from,
+          )}${ENDASH}${date(to)}`,
+        );
+        doc.para(description);
+      },
+    );
   }
 
-  doc.heading(data.skills.label);
-  Object.values(data.skills.categories).forEach(category => {
-    doc.para(category.label + ': ' + category.items.join(', ') + '.');
-  });
+  if (data.education.qualifications.length) {
+    doc.heading(data.education.label);
+    data.education.qualifications.forEach(
+      ({institution, graduated, qualification}) => {
+        doc.para(`${institution}, ${date(graduated)} ${EMDASH} ${qualification}`);
+      },
+    );
+  }
+
+  if (full) {
+    if (data.awards.items.length) {
+      doc.heading(data.awards.label);
+      data.awards.items.forEach(doc.para, doc);
+    }
+  }
+
+  if (data.skills.categories.length) {
+    doc.heading(data.skills.label);
+    Object.values(data.skills.categories).forEach(category => {
+      doc.para(category.label + ': ' + category.items.join(', ') + '.');
+    });
+  }
 
   const outfile =
     (private ? 'private' : 'public') +

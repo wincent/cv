@@ -68,7 +68,6 @@
           "label": {"$ref": "#localized"},
           "jobs": {
             "type": "array",
-            "minItems": 1,
             "items": {
               "type": "object",
               "additionalProperties": false,
@@ -92,7 +91,6 @@
           "label": {"$ref": "#localized"},
           "qualifications": {
             "type": "array",
-            "minItems": 1,
             "items": {
               "type": "object",
               "additionalProperties": false,
@@ -113,7 +111,6 @@
           "label": {"$ref": "#localized"},
           "items": {
             "type": "array",
-            "minItems": 1,
             "items": {
               "type": "string"
             }
@@ -148,7 +145,6 @@
                   "label": {"$ref": "#localized"},
                   "items": {
                     "type": "array",
-                    "minItems": 1,
                     "items": {"type": "string"}
                   }
                 },
