@@ -1,5 +1,8 @@
 Greg Hurrell
 greg@hurrell.net
+github.com/wincent
+twitter.com/wincent
+wincent.com
 
 Perfil
 ======
@@ -39,14 +42,3 @@ Formación
 =========
 
 Flinders University, 1999 — Bachelor of Education (UP/LS)(Hons)
-
-Conocimiento
-============
-
-Lenguajes de programación: JavaScript, Ruby, C, Haskell, ReasonML, PHP,
-Perl, Objective-C.
-
-Herramientas: HTML/CSS, Zsh/Bash, Vim, Git/Mercurial, MySQL/Redis,
-Ansible.
-
-Idiomas: English, Spanish.

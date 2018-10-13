@@ -1,5 +1,8 @@
 Greg Hurrell
 greg@hurrell.net
+github.com/wincent
+twitter.com/wincent
+wincent.com
 
 Perfil
 ======
@@ -52,13 +55,14 @@ Australian College of English Prize in Teacher Education
 
 Golden Key Scholar Award
 
-Conocimiento
-============
+Publicaciones
+=============
 
-Lenguajes de programación: JavaScript, Ruby, C, Haskell, ReasonML, PHP,
-Perl, Objective-C.
+Relay 2 - simpler, faster, and more predictable — 2016
+https://youtu.be/OEfUBN9dAI8
 
-Herramientas: HTML/CSS, Zsh/Bash, Vim, Git/Mercurial, MySQL/Redis,
-Ansible.
+Relay Deep Dive — 2016
+https://youtu.be/oPSuvaYmXBY
 
-Idiomas: English, Spanish.
+Migrating Rails with a Large Codebase — 2012
+https://youtu.be/qgCM2bca49w

@@ -1,5 +1,8 @@
 **Greg Hurrell**
 [greg@hurrell.net](mailto:greg@hurrell.net)
+[github.com/wincent](https://github.com/wincent)
+[twitter.com/wincent](https://twitter.com/wincent)
+[wincent.com](https://wincent.com)
 
 ## Perfil
 
@@ -22,11 +25,3 @@ Desarroll&#233; aplicaciones de macOS en C y Objective-C, aplicaciones de Rails 
 ## Formaci&#243;n
 
 Flinders University, 1999 &#8212; Bachelor of Education (UP/LS)(Hons)
-
-## Conocimiento
-
-Lenguajes de programaci&#243;n: JavaScript, Ruby, C, Haskell, ReasonML, PHP, Perl, Objective-C.
-
-Herramientas: HTML/CSS, Zsh/Bash, Vim, Git/Mercurial, MySQL/Redis, Ansible.
-
-Idiomas: English, Spanish.
