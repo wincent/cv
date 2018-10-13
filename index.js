@@ -571,7 +571,7 @@ function build({doc, full, language, private} = {}) {
     }
   }
 
-  if (data.skills.categories.length) {
+  if (Object.keys(data.skills.categories).length) {
     doc.heading(data.skills.label);
     Object.values(data.skills.categories).forEach(category => {
       doc.para(category.label + ': ' + category.items.join(', ') + '.');
