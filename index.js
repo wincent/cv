@@ -67,6 +67,11 @@ function stripProtocol(url) {
   return url.replace(/^(?:[a-z]+:)?\/\//, '');
 }
 
+/* Although we currently allow a few other types to be defined in the YAML,
+ * these are the only ones we include in the output for now.
+ */
+const PRESENCE_TYPES = ['github', 'twitter', 'website'];
+
 class HTML {
   constructor(language) {
     this.info = {};
@@ -91,15 +96,14 @@ class HTML {
         'https://fonts.googleapis.com/css?family=Playfair+Display:400,700&subset=latin-ext',
     };
 
-    const links = ['github', 'twitter', 'website']
-      .map(site => {
-        const url = presence[site];
-        if (url) {
-          return (
-            `<p><a href="${this._escape(url)}">${this._escape(stripProtocol(url))}</a></p>`
-          );
-        }
-      })
+    const links = PRESENCE_TYPES.map(site => {
+      const url = presence[site];
+      if (url) {
+        return `<p><a href="${this._escape(url)}">${this._escape(
+          stripProtocol(url),
+        )}</a></p>`;
+      }
+    })
       .filter(Boolean)
       .join('\n');
 
@@ -151,7 +155,9 @@ class HTML {
       ${content.map(line => `<p>${this._escape(line)}</p>\n`).join('\n')}
       <p><a href="mailto:${this._escape(email)}">${this._escape(email)}</a>
       ${links}
-    `.trim().replace(/^\s+/gm, '') + '\n</header>\n';
+    `
+        .trim()
+        .replace(/^\s+/gm, '') + '\n</header>\n';
   }
 
   heading(text, options = {}) {
@@ -163,8 +169,9 @@ class HTML {
   }
 
   link(text, target) {
-    this._content +=
-      `<p><a href="${this._escape(target)}">${this._escape(text)}</a></p>\n`;
+    this._content += `<p><a href="${this._escape(target)}">${this._escape(
+      text,
+    )}</a></p>\n`;
   }
 
   para(text, _options) {
@@ -191,15 +198,12 @@ class Markdown {
   }
 
   header(name, content, email, presence) {
-    const links = ['github', 'twitter', 'website']
-      .map(site => {
-        const url = presence[site];
-        if (url) {
-          return (
-            `[${this._escape(stripProtocol(url))}](${this._escape(url)})`
-          );
-        }
-      })
+    const links = PRESENCE_TYPES.map(site => {
+      const url = presence[site];
+      if (url) {
+        return `[${this._escape(stripProtocol(url))}](${this._escape(url)})`;
+      }
+    })
       .filter(Boolean)
       .join('\n');
 
@@ -209,7 +213,9 @@ class Markdown {
       ${content.map(line => this._escape(line)).join('\n')}
       [${this._escape(email)}](mailto:${this._escape(email)})
       ${links}
-    `.trim().replace(/^\s+/gm, '') + '\n\n';
+    `
+        .trim()
+        .replace(/^\s+/gm, '') + '\n\n';
   }
 
   heading(text, options = {}) {
@@ -315,26 +321,15 @@ class PDF {
       link: `mailto:${email}`,
     });
 
-    if (presence.github) {
-      header = header.text(stripProtocol(presence.github), {
-        align: 'right',
-        link: presence.github,
-      });
-    }
-
-    if (presence.twitter) {
-      header = header.text(stripProtocol(presence.twitter), {
-        align: 'right',
-        link: presence.twitter,
-      });
-    }
-
-    if (presence.website) {
-      header = header.text(stripProtocol(presence.website), {
-        align: 'right',
-        link: presence.website,
-      });
-    }
+    PRESENCE_TYPES.forEach(type => {
+      const url = presence[type];
+      if (url) {
+        header = header.text(stripProtocol(url), {
+          align: 'right',
+          link: url,
+        });
+      }
+    });
   }
 
   heading(text, options = {}) {
@@ -398,10 +393,9 @@ class Plaintext {
   }
 
   header(name, content, email, presence) {
-    const urls = ['github', 'twitter', 'website']
-      .map(site => (
-        presence[site] ? stripProtocol(presence[site]) : null
-      ))
+    const urls = PRESENCE_TYPES.map(
+      site => (presence[site] ? stripProtocol(presence[site]) : null),
+    )
       .filter(Boolean)
       .join('\n');
     this._content +=
@@ -410,7 +404,9 @@ class Plaintext {
       ${content.join('\n')}
       ${email}
       ${urls}
-    `.trim().replace(/^\s+/gm, '') + '\n\n';
+    `
+        .trim()
+        .replace(/^\s+/gm, '') + '\n\n';
   }
 
   _underline(text, underline) {
@@ -521,7 +517,9 @@ function build({doc, full, language, private} = {}) {
     doc.heading(data.education.label);
     data.education.qualifications.forEach(
       ({institution, graduated, qualification}) => {
-        doc.para(`${institution}, ${date(graduated)} ${EMDASH} ${qualification}`);
+        doc.para(
+          `${institution}, ${date(graduated)} ${EMDASH} ${qualification}`,
+        );
       },
     );
   }
@@ -537,10 +535,7 @@ function build({doc, full, language, private} = {}) {
     if (data.publications.items.length) {
       doc.heading(data.publications.label);
       data.publications.items.forEach(({title, link, when}) => {
-        doc.link(
-          `${title} ${EMDASH} ${date(when)}`,
-          link
-        );
+        doc.link(`${title} ${EMDASH} ${date(when)}`, link);
       });
     }
   }
