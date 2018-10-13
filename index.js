@@ -206,11 +206,15 @@ class HTML {
   }
 }
 
+/**
+ * Tagged template literal function for emitting Markdown that escapes all
+ * interpolated values to ensure that gh-page doesn't mangle any contained
+ * UTF-8.
+ */
 function markdown(strings, ...interpolations) {
   return strings.reduce((output, string, i) => {
     output += string;
 
-    // gh-pages mangles UTF-8 in Markdown files, so escape interpolated text.
     if (i < interpolations.length) {
       output += interpolations[i].replace(
         /[\u00a0-\u9999<>\&]/gim,
