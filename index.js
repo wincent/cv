@@ -469,7 +469,9 @@ function build({doc, full, language, private} = {}) {
   if (full) {
     if (data.awards.items.length) {
       doc.heading(data.awards.label);
-      data.awards.items.forEach(doc.para, doc);
+      data.awards.items.forEach(item => {
+        doc.para(item);
+      });
     }
 
     if (data.publications.items.length) {
