@@ -67,7 +67,8 @@ function stripProtocol(url) {
   return url.replace(/^(?:[a-z]+:)?\/\//, '');
 }
 
-/* Although we currently allow a few other types to be defined in the YAML,
+/**
+ * Although we currently allow a few other types to be defined in the YAML,
  * these are the only ones we include in the output for now.
  */
 const PRESENCE_TYPES = ['github', 'twitter', 'website'];
