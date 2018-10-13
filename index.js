@@ -183,35 +183,44 @@ class HTML {
   }
 }
 
+function markdown(strings, ...interpolations) {
+  return strings.reduce((output, string, i) => {
+    output += string;
+
+    // gh-pages mangles UTF-8 in Markdown files, so escape interpolated text.
+    const interpolation =
+      i < interpolations.length
+        ? interpolations[i].replace(
+            /[\u00a0-\u9999<>\&]/gim,
+            c => '&#' + c.charCodeAt(0) + ';',
+          )
+        : '';
+
+    return output + interpolation;
+  }, '');
+}
+
 class Markdown {
   constructor() {
     this.info = {};
     this._content = '';
   }
 
-  _escape(string) {
-    // gh-pages mangles UTF-8 in Markdown files.
-    return string.replace(
-      /[\u00a0-\u9999<>\&]/gim,
-      c => '&#' + c.charCodeAt(0) + ';',
-    );
-  }
-
   header(name, content, email, presence) {
     const links = PRESENCE_TYPES.map(site => {
       const url = presence[site];
       if (url) {
-        return `[${this._escape(stripProtocol(url))}](${this._escape(url)})`;
+        return markdown`[${stripProtocol(url)}](${url})`;
       }
     })
       .filter(Boolean)
       .join('\n');
 
     this._content +=
-      `
-      **${this._escape(name)}**
-      ${content.map(line => this._escape(line)).join('\n')}
-      [${this._escape(email)}](mailto:${this._escape(email)})
+      markdown`
+      **${name}**
+      ${content.join('\n')}
+      [${email}](mailto:${email})
       ${links}
     `
         .trim()
@@ -219,19 +228,19 @@ class Markdown {
   }
 
   heading(text, options = {}) {
-    this._content += `## ${this._escape(text)}\n\n`;
+    this._content += markdown`## ${text}\n\n`;
   }
 
   subHeading(text) {
-    this._content += `### ${this._escape(text)}\n\n`;
+    this._content += markdown`### ${text}\n\n`;
   }
 
   link(text, target) {
-    this._content += `[${this._escape(text)}](${this._escape(target)})\n\n`;
+    this._content += markdown`[${text}](${target})\n\n`;
   }
 
   para(text, _options) {
-    this._content += `${this._escape(text)}\n\n`;
+    this._content += markdown`${text}\n\n`;
   }
 
   write(outfile) {
