@@ -95,7 +95,7 @@ function html(strings, ...interpolations) {
     if (i < interpolations.length) {
       const interpolation = interpolations[i];
       output += interpolation.__safe
-        ? interpolation.toString()
+        ? interpolation
         : interpolation
             .replace(/&/g, '&amp;')
             .replace(/</g, '&lt;')
