@@ -189,15 +189,14 @@ function markdown(strings, ...interpolations) {
     output += string;
 
     // gh-pages mangles UTF-8 in Markdown files, so escape interpolated text.
-    const interpolation =
-      i < interpolations.length
-        ? interpolations[i].replace(
-            /[\u00a0-\u9999<>\&]/gim,
-            c => '&#' + c.charCodeAt(0) + ';',
-          )
-        : '';
+    if (i < interpolations.length) {
+      output += interpolations[i].replace(
+        /[\u00a0-\u9999<>\&]/gim,
+        c => '&#' + c.charCodeAt(0) + ';',
+      );
+    }
 
-    return output + interpolation;
+    return output;
   }, '');
 }
 
