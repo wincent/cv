@@ -195,6 +195,18 @@ class Markdown {
 
 class PDF {
   constructor() {
+    this._reset();
+  }
+
+  _record(command, args = []) {
+    this._commands.push({
+      command,
+      args,
+    });
+  }
+
+  _reset() {
+    this._commands = [];
     this._doc = new PDFDocument();
     this._doc
       .registerFont(
@@ -210,6 +222,7 @@ class PDF {
   }
 
   header(name, content, email) {
+    this._record('header', arguments);
     let header = this._doc
       .font('didot-regular')
       .fontSize(16)
@@ -229,18 +242,19 @@ class PDF {
   }
 
   heading(text, options = {}) {
+    this._record('heading', arguments);
     this._doc
       .font('didot')
       .fontSize(11)
       .moveDown()
       .text(text.toUpperCase(), {characterSpacing: 2});
-    if (options.collapse) {
-      // HACK alert!
-      this._doc.moveUp();
-    }
   }
 
   subHeading(text) {
+    if (this._commands.length && this._commands[this._commands.length - 1].command === 'heading') {
+      this._doc.moveUp();
+    }
+    this._record('subHeading', arguments);
     this._doc
       .font('didot')
       .fontSize(11)
@@ -249,6 +263,7 @@ class PDF {
   }
 
   para(text) {
+    this._record('para', arguments);
     this._doc
       .font('baskerville')
       .fontSize(12)
@@ -362,7 +377,7 @@ function build({doc, full, language, private} = {}) {
   const ENDASH = '\u2013';
   const EMDASH = '\u2014';
 
-  doc.heading(data.experience.label, {collapse: true});
+  doc.heading(data.experience.label);
   data.experience.jobs.forEach(
     ({role, company, location, from, to, description}) => {
       doc.subHeading(
