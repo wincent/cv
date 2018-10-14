@@ -323,7 +323,7 @@ class PDF {
             return;
           } else {
             // We already tried inserting a break and still wound up in
-            // `_reset()`, so give up; the "unwanted" page break is
+            // `_rewind()`, so give up; the "unwanted" page break is
             // probably fine.
             return;
           }
