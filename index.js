@@ -584,8 +584,6 @@ function build({doc, full, language, private} = {}) {
     (full ? '-full' : '') +
     `.${language}`;
   doc.write(outfile);
-
-  printProgress();
 }
 
 function mkdir(string) {
@@ -635,7 +633,10 @@ rawData.languages.forEach(language => {
   [true, false].forEach(full => {
     [true, false].forEach(private => {
       [new PDF(), new Markdown(), new Plaintext(), new HTML(language)].forEach(
-        doc => build({doc, language, full, private}),
+        doc => {
+          build({doc, language, full, private});
+          printProgress();
+        },
       );
     });
   });
