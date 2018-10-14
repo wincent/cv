@@ -630,29 +630,17 @@ Math.random = random;
 
 mkdir('public');
 mkdir('private');
+
 rawData.languages.forEach(language => {
-  build({doc: new PDF(), language});
-  build({doc: new PDF(), language, full: true});
-  build({doc: new PDF(), language, private: true});
-  build({doc: new PDF(), language, full: true, private: true});
-
-  build({doc: new Markdown(), language});
-  build({doc: new Markdown(), language, full: true});
-  build({doc: new Markdown(), language, private: true});
-  build({doc: new Markdown(), language, full: true, private: true});
-
-  build({doc: new Plaintext(), language});
-  build({doc: new Plaintext(), language, full: true});
-  build({doc: new Plaintext(), language, private: true});
-  build({doc: new Plaintext(), language, full: true, private: true});
-
-  build({doc: new HTML(language), language});
-  build({doc: new HTML(language), language, full: true});
-  build({doc: new HTML(language), language, private: true});
-  build({doc: new HTML(language), language, full: true, private: true});
-
-  // Add default index page.
-  fs.copyFileSync('public/cv.en.html', 'public/index.html');
-  printProgress();
+  [true, false].forEach(full => {
+    [true, false].forEach(private => {
+      [new PDF(), new Markdown(), new Plaintext(), new HTML(language)].forEach(
+        doc => build({doc, language, full, private}),
+      );
+    });
+  });
 });
+
+// Add default index page.
+fs.copyFileSync('public/cv.en.html', 'public/index.html');
 printDone();
