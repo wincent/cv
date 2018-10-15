@@ -185,7 +185,7 @@ class HTML {
         .replace(/^\s+/gm, '') + '\n</header>\n';
   }
 
-  heading(text, options = {}) {
+  heading(text, _options) {
     this._content += html`<h1>${text.toUpperCase()}</h1>\n`;
   }
 
@@ -253,7 +253,7 @@ class Markdown {
         .replace(/^\s+/gm, '') + '\n\n';
   }
 
-  heading(text, options = {}) {
+  heading(text, _options) {
     this._content += markdown`## ${text}\n\n`;
   }
 
@@ -367,7 +367,7 @@ class PDF {
     });
   }
 
-  heading(text, options = {}) {
+  heading(text, _options) {
     this._record('heading', arguments);
     this._doc
       .font('didot')
@@ -449,7 +449,7 @@ class Plaintext {
     this._content += underline.repeat(text.length) + '\n\n';
   }
 
-  heading(text, options = {}) {
+  heading(text, _options) {
     this._underline(text, '=');
   }
 
