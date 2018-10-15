@@ -217,7 +217,7 @@ function markdown(strings, ...interpolations) {
 
     if (i < interpolations.length) {
       output += interpolations[i].replace(
-        /[\u00a0-\u9999<>\&]/gim,
+        /[\u00a0-\u9999<>&]/gim,
         c => '&#' + c.charCodeAt(0) + ';',
       );
     }
