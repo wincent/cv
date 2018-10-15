@@ -607,11 +607,6 @@ let m_w = 0xdeadbeef;
 let m_z = 987654321;
 let mask = 0xffffffff;
 
-function seed(i) {
-  m_w = i;
-  m_z = 987654321;
-}
-
 function random() {
   m_z = (36969 * (m_z & 65535) + (m_z >> 16)) & mask;
   m_w = (18000 * (m_w & 65535) + (m_w >> 16)) & mask;
