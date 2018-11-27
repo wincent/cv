@@ -48,6 +48,6 @@ Golden Key Scholar Award
 
 Programming languages: JavaScript, Ruby, C, Haskell, ReasonML, PHP, Perl, Objective-C.
 
-Tools: HTML/CSS, Zsh/Bash, Vim, Git/Mercurial, MySQL/Redis, Ansible.
+Tools: HTML/CSS, Zsh/Bash, Vim, Git/Mercurial, MySQL/Redis, Ansible, AWS.
 
 Spoken languages: English, Spanish.

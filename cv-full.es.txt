@@ -74,6 +74,6 @@ Lenguajes de programación: JavaScript, Ruby, C, Haskell, ReasonML, PHP,
 Perl, Objective-C.
 
 Herramientas: HTML/CSS, Zsh/Bash, Vim, Git/Mercurial, MySQL/Redis,
-Ansible.
+Ansible, AWS.
 
 Idiomas: English, Spanish.

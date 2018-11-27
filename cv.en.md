@@ -30,6 +30,6 @@ Flinders University, 1999 &#8212; Bachelor of Education (UP/LS)(Hons)
 
 Programming languages: JavaScript, Ruby, C, Haskell, ReasonML, PHP, Perl, Objective-C.
 
-Tools: HTML/CSS, Zsh/Bash, Vim, Git/Mercurial, MySQL/Redis, Ansible.
+Tools: HTML/CSS, Zsh/Bash, Vim, Git/Mercurial, MySQL/Redis, Ansible, AWS.
 
 Spoken languages: English, Spanish.
