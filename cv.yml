@@ -166,6 +166,7 @@ skills:
         - Git/Mercurial
         - MySQL/Redis
         - Ansible
+        - AWS
 
     spoken languages:
       label:
