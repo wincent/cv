@@ -6,7 +6,9 @@
 
 ## Profile
 
-Software Engineer
+Software Engineer in Madrid
+
+Legal resident in Spain with work authorization
 
 ## Experience
 

@@ -6,7 +6,9 @@
 
 ## Perfil
 
-Ingeniero de Software
+Ingeniero de Software en Madrid
+
+Provisto de tarjeta de residencia con permiso de trabajo
 
 ## Experiencia
 
