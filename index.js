@@ -529,7 +529,8 @@ function build({doc, full, language, private} = {}) {
   );
 
   doc.heading(data.profile.label);
-  doc.para(data.profile.text);
+  doc.para(data.profile.primary);
+  doc.para(data.profile.secondary);
 
   const ENDASH = '\u2013';
   const EMDASH = '\u2014';

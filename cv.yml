@@ -23,9 +23,12 @@ profile:
   label:
     en: Profile
     es: Perfil
-  text:
-    en: Software Engineer
-    es: Ingeniero de Software
+  primary:
+    en: Software Engineer in Madrid
+    es: Ingeniero de Software en Madrid
+  secondary:
+    en: Legal resident in Spain with work authorization
+    es: Provisto de tarjeta de residencia con permiso de trabajo
 
 experience:
   label:
