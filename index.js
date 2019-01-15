@@ -5,6 +5,10 @@ const PDFDocument = require('pdfkit');
 
 const schema = require('./schema.json');
 
+const PRESENT = {
+  es: 'presente',
+};
+
 function validate(data, schema) {
   const ajv = new Ajv({allErrors: true, $data: true});
   const validate = ajv.compile(schema);
@@ -487,11 +491,6 @@ class Plaintext {
   }
 }
 
-function date(dateString) {
-  // We only want to show the year.
-  return dateString.toString().replace(/^(\d{4}).*/, '$1');
-}
-
 function printProgress() {
   process.stdout.write('.');
 }
@@ -501,6 +500,15 @@ function printDone() {
 }
 
 function build({doc, full, language, private} = {}) {
+  function date(dateString) {
+    if (dateString == null) {
+      return PRESENT[language] || 'present';
+    } else {
+      // We only want to show the year.
+      return dateString.toString().replace(/^(\d{4}).*/, '$1');
+    }
+  }
+
   const data = localize(
     {
       ...rawData,

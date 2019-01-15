@@ -2,7 +2,7 @@ languages:
   - en
   - es
 
-version: 2018-09-17
+version: 2019-01-14
 
 identity:
 
@@ -36,6 +36,18 @@ experience:
     es: Experiencia
 
   items:
+    - role:
+        en: Frontend Software Architect
+        es: Frontend Software Architect
+      company: Liferay
+      location: Madrid, Spain
+      from: 2019-01
+      description:
+        en:
+          Designing and implementing JavaScript frameworks, libraries and tools.
+        es:
+          Diseñar e implementar frameworks, librerías y herramientas en JavaScript.
+
     - role:
         en: Front-End Engineer
         es: Ingeniero de Interfaces de Usuario

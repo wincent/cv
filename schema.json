@@ -15,8 +15,7 @@
         "$id": "#dateish",
         "anyOf": [
           {"format": "date"},
-          {"pattern": "^\\d{4}-\\d{2}$"},
-          {"const": "Present"}
+          {"pattern": "^\\d{4}-\\d{2}$"}
         ]
       }
     },
@@ -80,7 +79,7 @@
                 "to": {"$ref": "#dateish"},
                 "description": {"$ref": "#localized"}
               },
-              "required": ["role", "company", "location", "from", "to", "description"]
+              "required": ["role", "company", "location", "from", "description"]
             }
           }
         }
