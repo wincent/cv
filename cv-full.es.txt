@@ -14,6 +14,12 @@ Provisto de tarjeta de residencia con permiso de trabajo
 Experiencia
 ===========
 
+Frontend Software Architect, Liferay; Madrid, Spain — 2019–presente
+-------------------------------------------------------------------
+
+Diseñar e implementar frameworks, librerías y herramientas en
+JavaScript.
+
 Ingeniero de Interfaces de Usuario, Facebook; Menlo Park, California — 2014–2018
 --------------------------------------------------------------------------------
 
