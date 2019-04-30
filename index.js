@@ -345,10 +345,10 @@ class PDF {
     this._record('header', arguments);
     let header = this._doc
       .font('didot-regular')
-      .fontSize(16)
+      .fontSize(15)
       .text(name, {align: 'right'})
       .font('baskerville')
-      .fontSize(12)
+      .fontSize(11)
       .lineGap(2)
       .moveDown();
 
@@ -375,7 +375,7 @@ class PDF {
     this._record('heading', arguments);
     this._doc
       .font('didot')
-      .fontSize(11)
+      .fontSize(10)
       .moveDown()
       .text(text.toUpperCase(), {characterSpacing: 2});
   }
@@ -390,7 +390,7 @@ class PDF {
     this._record('subHeading', arguments);
     this._doc
       .font('didot')
-      .fontSize(11)
+      .fontSize(10)
       .moveDown()
       .text(text, {characterSpacing: 0.5});
   }
@@ -406,7 +406,7 @@ class PDF {
     this._record('para', arguments);
     this._doc
       .font('baskerville')
-      .fontSize(12)
+      .fontSize(11)
       .lineGap(2)
       .text(text, options);
     if (this._doc.y < last) {
