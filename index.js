@@ -147,9 +147,9 @@ class HTML {
       <title>
         ${this.info.Author} — ${this.info.Title}
       </title>
+      <link href="${fonts.quattrocentro}" rel="stylesheet">
+      <link href="${fonts.playfair}" rel="stylesheet">
       <style>
-        @import url('${fonts.quattrocentro}');
-        @import url('${fonts.playfair}');
         body {
           font-family: 'Quattrocento', serif;
           padding: 0 1em 0 1em;
@@ -175,7 +175,6 @@ class HTML {
             padding: 0 5em 0 5em;
           }
         }
-
       </style>
       </head>
       <body>
