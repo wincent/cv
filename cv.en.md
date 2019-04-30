@@ -38,4 +38,4 @@ Programming languages: JavaScript, Ruby, C, Haskell, ReasonML, PHP, Perl, Object
 
 Tools: HTML/CSS, Zsh/Bash, Vim, Git/Mercurial, MySQL/Redis, Ansible, AWS.
 
-Spoken languages: English, Spanish.
+Spoken languages: English (native), Spanish (DELE level C1, "Advanced").

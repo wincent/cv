@@ -60,4 +60,4 @@ Perl, Objective-C.
 Herramientas: HTML/CSS, Zsh/Bash, Vim, Git/Mercurial, MySQL/Redis,
 Ansible, AWS.
 
-Idiomas: English, Spanish.
+Idiomas: inglés (nativo), español (DELE nivel C1, "Avanzado").

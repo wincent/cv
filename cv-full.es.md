@@ -56,4 +56,4 @@ Lenguajes de programaci&#243;n: JavaScript, Ruby, C, Haskell, ReasonML, PHP, Per
 
 Herramientas: HTML/CSS, Zsh/Bash, Vim, Git/Mercurial, MySQL/Redis, Ansible, AWS.
 
-Idiomas: English, Spanish.
+Idiomas: ingl&#233;s (nativo), espa&#241;ol (DELE nivel C1, "Avanzado").
