@@ -188,5 +188,7 @@ skills:
         en: Spoken languages
         es: Idiomas
       items:
-        - English
-        - Spanish
+        - en: English (native)
+          es: inglés (nativo)
+        - en: Spanish (DELE level C1, "Advanced")
+          es: español (DELE nivel C1, "Avanzado")
