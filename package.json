@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "node index.js",
-    "pretty": "prettier --write index.js",
+    "format": "prettier --write *.{js,json,md,yml}",
+    "format:check": "prettier --list-different *.{js,json,md,yml}",
     "publish": "sh scripts/publish",
-    "test": "prettier --list-different index.js"
+    "test": "yarn format:check"
   },
   "repository": {
     "type": "git",

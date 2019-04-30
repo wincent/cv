@@ -13,10 +13,7 @@
       },
       "dateish": {
         "$id": "#dateish",
-        "anyOf": [
-          {"format": "date"},
-          {"pattern": "^\\d{4}-\\d{2}$"}
-        ]
+        "anyOf": [{"format": "date"}, {"pattern": "^\\d{4}-\\d{2}$"}]
       }
     },
     "properties": {
@@ -153,10 +150,7 @@
                   "items": {
                     "type": "array",
                     "items": {
-                      "anyOf": [
-                        {"type": "string"},
-                        {"$ref": "#localized"}
-                      ]
+                      "anyOf": [{"type": "string"}, {"$ref": "#localized"}]
                     }
                   }
                 },

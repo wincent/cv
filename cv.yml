@@ -5,12 +5,10 @@ languages:
 version: 2019-01-14
 
 identity:
-
   email: greg@hurrell.net
   name: Greg Hurrell
 
 presence:
-
   facebook: https://www.facebook.com/glh
   github: https://github.com/wincent
   keybase: https://keybase.io/wincent
@@ -43,10 +41,8 @@ experience:
       location: Madrid, Spain
       from: 2019-01
       description:
-        en:
-          Designing and implementing JavaScript frameworks, libraries and tools.
-        es:
-          Diseñar e implementar frameworks, librerías y herramientas en JavaScript.
+        en: Designing and implementing JavaScript frameworks, libraries and tools.
+        es: Diseñar e implementar frameworks, librerías y herramientas en JavaScript.
 
     - role:
         en: Front-End Engineer
@@ -56,13 +52,11 @@ experience:
       from: 2014-01
       to: 2018-07
       description:
-        en:
-          Coder, mentor and tech lead working on Product Infrastructure —
+        en: Coder, mentor and tech lead working on Product Infrastructure —
           from open source JavaScript libraries (Relay, GraphQL) to internal
           build and developer tooling — and Ads Interfaces (among the
           largest and full-featured React applications in the world).
-        es:
-          Fui desarrollador, mentor y líder tecnológico. En
+        es: Fui desarrollador, mentor y líder tecnológico. En
           infraestructura de productos, desarrollé librerías en
           JavaScript de código abierto (Relay, GraphQL) y herramientas
           internas de compilación y desarrollo. En Interfaces de
@@ -77,15 +71,13 @@ experience:
       from: 2011-03
       to: 2013-12
       description:
-        en:
-          Key player in the formation and maintenance of engineering
+        en: Key player in the formation and maintenance of engineering
           culture focused on quality, pragmatism, and individual and
           team development. Mentored 10 direct reports. Full-stack
           development of many user-facing features and underlying
           infrastructure. Implemented systematic code review (via
           Gerrit). Served as Tech Lead, Coach and Mentor.
-        es:
-          Interpreté un papel decisivo en la formación y mantenimiento
+        es: Interpreté un papel decisivo en la formación y mantenimiento
           de la cultura y procesos de ingeniería, caracterizados
           por la calidad, el pragmatismo y el desarrollo individual y
           del equipo. En capacidad de director lideré un equipo de
@@ -103,14 +95,11 @@ experience:
       from: 2002
       to: 2011
       description:
-        en:
-          Developed macOS applications in C and Objective-C, Rails
+        en: Developed macOS applications in C and Objective-C, Rails
           applications, and a large number of open source projects.
-        es:
-          Desarrollé aplicaciones de macOS en C y Objective-C,
+        es: Desarrollé aplicaciones de macOS en C y Objective-C,
           aplicaciones de Rails y una gran cantidad de proyectos de
           código abierto.
-
 
 education:
   label:
