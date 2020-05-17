@@ -278,8 +278,11 @@ class Markdown {
 }
 
 class PDF {
-  constructor() {
-    this.info = {};
+  constructor(data) {
+    this.info = {
+      CreationDate: new Date(Date.parse('2018-09-15')),
+      ModDate: new Date(Date.parse(data.version)),
+    };
     this._reset();
   }
 
@@ -293,7 +296,7 @@ class PDF {
 
   _reset() {
     this._commands = [];
-    this._doc = new PDFDocument();
+    this._doc = new PDFDocument({info: this.info});
     this._doc
       .registerFont(
         'baskerville',
@@ -517,8 +520,6 @@ function build({doc, full, language, private} = {}) {
   );
   doc.info.Title = 'Curriculum Vitae';
   doc.info.Author = data.identity.name;
-  doc.info.CreationDate = new Date(Date.parse('2018-09-15'));
-  doc.info.ModDate = new Date(Date.parse(data.version));
 
   doc.header(
     data.identity.name,
@@ -608,7 +609,7 @@ mkdir('private');
 rawData.languages.forEach(language => {
   [true, false].forEach(full => {
     [true, false].forEach(private => {
-      [new PDF(), new Markdown(), new Plaintext(), new HTML(language)].forEach(
+      [new PDF(rawData), new Markdown(), new Plaintext(), new HTML(language)].forEach(
         doc => {
           build({doc, language, full, private});
           printProgress();
