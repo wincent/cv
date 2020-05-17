@@ -20,7 +20,11 @@
   "devDependencies": {
     "ajv": "6.12.2",
     "js-yaml": "3.13.1",
+    "minimist": "1.2.5",
     "pdfkit": "0.11.0",
     "prettier": "2.0.5"
+  },
+  "resolutions": {
+    "minimist": "1.2.5"
   }
 }
