@@ -50,15 +50,15 @@ validate(
 
 function localize(object, language) {
   if (typeof object === 'object' && object !== null) {
-    if (rawData.languages.every(l => typeof object[l] === 'string')) {
+    if (rawData.languages.every((l) => typeof object[l] === 'string')) {
       // Materialize the concrete language choice from the list.
       return object[language];
     }
     if (Array.isArray(object)) {
-      return object.map(item => localize(item, language));
+      return object.map((item) => localize(item, language));
     } else {
       const nested = {};
-      Object.keys(object).forEach(key => {
+      Object.keys(object).forEach((key) => {
         nested[key] = localize(object[key], language);
       });
       return nested;
@@ -127,7 +127,7 @@ class HTML {
         'https://fonts.googleapis.com/css?family=Playfair+Display:400,700&subset=latin-ext',
     };
 
-    const links = PRESENCE_TYPES.map(site => {
+    const links = PRESENCE_TYPES.map((site) => {
       const url = presence[site];
       if (url) {
         return html`<p><a href="${url}">${stripProtocol(url)}</a></p>`;
@@ -221,7 +221,7 @@ function markdown(strings, ...interpolations) {
     if (i < interpolations.length) {
       output += interpolations[i].replace(
         /[\u00a0-\u9999<>&]/gim,
-        c => '&#' + c.charCodeAt(0) + ';',
+        (c) => '&#' + c.charCodeAt(0) + ';',
       );
     }
 
@@ -236,7 +236,7 @@ class Markdown {
   }
 
   header(name, content, email, presence) {
-    const links = PRESENCE_TYPES.map(site => {
+    const links = PRESENCE_TYPES.map((site) => {
       const url = presence[site];
       if (url) {
         return markdown`[${stripProtocol(url)}](${url})`;
@@ -354,7 +354,7 @@ class PDF {
       .lineGap(2)
       .moveDown();
 
-    content.forEach(line => {
+    content.forEach((line) => {
       header = header.text(line, {align: 'right'});
     });
     header = header.text(email, {
@@ -362,7 +362,7 @@ class PDF {
       link: `mailto:${email}`,
     });
 
-    PRESENCE_TYPES.forEach(type => {
+    PRESENCE_TYPES.forEach((type) => {
       const url = presence[type];
       if (url) {
         header = header.text(stripProtocol(url), {
@@ -406,11 +406,7 @@ class PDF {
       ? this._commands[this._commands.length - 1].y
       : this._doc.y;
     this._record('para', arguments);
-    this._doc
-      .font('baskerville')
-      .fontSize(11)
-      .lineGap(2)
-      .text(text, options);
+    this._doc.font('baskerville').fontSize(11).lineGap(2).text(text, options);
     if (this._doc.y < last) {
       // This para bumped us onto a new page; let's try again, forcing a page
       // break before a heading instead.
@@ -434,8 +430,8 @@ class Plaintext {
   }
 
   header(name, content, email, presence) {
-    const urls = PRESENCE_TYPES.map(
-      site => (presence[site] ? stripProtocol(presence[site]) : null),
+    const urls = PRESENCE_TYPES.map((site) =>
+      presence[site] ? stripProtocol(presence[site]) : null,
     )
       .filter(Boolean)
       .join('\n');
@@ -567,7 +563,7 @@ function build({doc, full, language, private} = {}) {
   if (full) {
     if (data.awards.items.length) {
       doc.heading(data.awards.label);
-      data.awards.items.forEach(item => {
+      data.awards.items.forEach((item) => {
         doc.para(item);
       });
     }
@@ -582,7 +578,7 @@ function build({doc, full, language, private} = {}) {
 
   if (Object.keys(data.skills.categories).length) {
     doc.heading(data.skills.label);
-    Object.values(data.skills.categories).forEach(category => {
+    Object.values(data.skills.categories).forEach((category) => {
       doc.para(category.label + ': ' + category.items.join(', ') + '.');
     });
   }
@@ -606,15 +602,18 @@ function mkdir(string) {
 mkdir('public');
 mkdir('private');
 
-rawData.languages.forEach(language => {
-  [true, false].forEach(full => {
-    [true, false].forEach(private => {
-      [new PDF(rawData), new Markdown(), new Plaintext(), new HTML(language)].forEach(
-        doc => {
-          build({doc, language, full, private});
-          printProgress();
-        },
-      );
+rawData.languages.forEach((language) => {
+  [true, false].forEach((full) => {
+    [true, false].forEach((private) => {
+      [
+        new PDF(rawData),
+        new Markdown(),
+        new Plaintext(),
+        new HTML(language),
+      ].forEach((doc) => {
+        build({doc, language, full, private});
+        printProgress();
+      });
     });
   });
 });
