@@ -44,6 +44,8 @@ Golden Key Scholar Award
 
 ## Publications
 
+[Scalable Frontend Development &#8212; 2019](https://youtu.be/b_aozg2vaJE)
+
 [Relay 2 - simpler, faster, and more predictable &#8212; 2016](https://youtu.be/OEfUBN9dAI8)
 
 [Relay Deep Dive &#8212; 2016](https://youtu.be/oPSuvaYmXBY)
