@@ -602,33 +602,6 @@ function mkdir(string) {
   }
 }
 
-/*
- * <ghastly-monkey-patching>
- *
- * We're doing this for a good cause, really (to produce stable output when the
- * input hasn't changed). See: https://github.com/foliojs/pdfkit/issues/868
- *
- * Random number generation based on: https://stackoverflow.com/a/19301306/2103996
- */
-
-let m_w = 0xdeadbeef;
-let m_z = 987654321;
-let mask = 0xffffffff;
-
-function random() {
-  m_z = (36969 * (m_z & 65535) + (m_z >> 16)) & mask;
-  m_w = (18000 * (m_w & 65535) + (m_w >> 16)) & mask;
-  let result = ((m_z << 16) + m_w) & mask;
-  result /= 4294967296;
-  return result + 0.5;
-}
-
-Math.random = random;
-
-/*
- * </ghastly-monkey-patching>
- */
-
 mkdir('public');
 mkdir('private');
 
