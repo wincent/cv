@@ -8,7 +8,7 @@
 
 Ingeniero de Software en Madrid
 
-Provisto de tarjeta de residencia con permiso de trabajo
+Australiano de origen con nacionalidad espa&#241;ola
 
 ## Experiencia
 

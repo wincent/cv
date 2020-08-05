@@ -8,7 +8,7 @@
 
 Software Engineer in Madrid
 
-Legal resident in Spain with work authorization
+Australian with Spanish citizenship
 
 ## Experience
 
