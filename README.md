@@ -1,8 +1,9 @@
 # My CV
 
-- `npm run build`: Builds CV in English and Spanish in multiple output formats (PDF, Markdown, HTML and plaintext) and levels of detail.
-- `npm run publish`: Copy latest public build artifacts to [the "gh-pages" branch](https://github.com/wincent/cv/tree/gh-pages).
-- `npm test`: Check JS formatting.
+- `yarn run build`: Builds CV in English and Spanish in multiple output formats (PDF, Markdown, HTML and plaintext) and levels of detail.
+- `yarn run publish`: Copy latest public build artifacts to [the "gh-pages" branch](https://github.com/wincent/cv/tree/gh-pages).
+- `yarn test`: Check JS formatting.
+- `yarn format`: Fix JS formatting.
 
 # Output
 
