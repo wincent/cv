@@ -128,6 +128,10 @@ publications:
     es: Publicaciones
 
   items:
+    - title: Sharpening the axe (VimConf 2020)
+      link: https://youtu.be/iEShYRRVZOE
+      when: 2020-09
+
     - title: Scalable Frontend Development
       link: https://youtu.be/b_aozg2vaJE
       when: 2019-11
