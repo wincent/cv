@@ -66,6 +66,9 @@ Golden Key Scholar Award
 Publicaciones
 =============
 
+Sharpening the axe (VimConf 2020) — 2020
+https://youtu.be/iEShYRRVZOE
+
 Scalable Frontend Development — 2019
 https://youtu.be/b_aozg2vaJE
 
