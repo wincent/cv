@@ -14,8 +14,13 @@ Australiano de origen con nacionalidad española
 Experiencia
 ===========
 
-Frontend Software Architect, Liferay; Madrid, Spain — 2019–presente
--------------------------------------------------------------------
+Software Engineer, GitHub; Madrid, Spain — 2021–presente
+--------------------------------------------------------
+
+Desarollador en repositorios, pull requests y Codespaces.
+
+Frontend Software Architect, Liferay; Madrid, Spain — 2019–2021
+---------------------------------------------------------------
 
 Diseñar e implementar frameworks, librerías y herramientas en
 JavaScript.

@@ -14,8 +14,13 @@ Australian with Spanish citizenship
 Experience
 ==========
 
-Frontend Software Architect, Liferay; Madrid, Spain — 2019–present
-------------------------------------------------------------------
+Software Engineer, GitHub; Madrid, Spain — 2021–present
+-------------------------------------------------------
+
+Working on Repos, Pull Requests, and Codespaces.
+
+Frontend Software Architect, Liferay; Madrid, Spain — 2019–2021
+---------------------------------------------------------------
 
 Designing and implementing JavaScript frameworks, libraries and tools.
 
