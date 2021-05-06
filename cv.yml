@@ -2,7 +2,7 @@ languages:
   - en
   - es
 
-version: 2020-05-17
+version: 2021-05-07
 
 identity:
   email: greg@hurrell.net
@@ -35,11 +35,22 @@ experience:
 
   items:
     - role:
+        en: Software Engineer
+        es: Software Engineer
+      company: GitHub
+      location: Madrid, Spain
+      from: 2021-06
+      description:
+        en: Working on Repos, Pull Requests, and Codespaces.
+        es: Desarollador en repositorios, pull requests y Codespaces.
+
+    - role:
         en: Frontend Software Architect
         es: Frontend Software Architect
       company: Liferay
       location: Madrid, Spain
       from: 2019-01
+      to: 2021-05
       description:
         en: Designing and implementing JavaScript frameworks, libraries and tools.
         es: Diseñar e implementar frameworks, librerías y herramientas en JavaScript.
