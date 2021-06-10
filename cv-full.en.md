@@ -12,7 +12,7 @@ Australian with Spanish citizenship
 
 ## Experience
 
-### Software Engineer, GitHub; Madrid, Spain &#8212; 2021&#8211;present
+### Senior Software Engineer, GitHub; Madrid, Spain &#8212; 2021&#8211;present
 
 Working on Repos, Pull Requests, and Codespaces.
 

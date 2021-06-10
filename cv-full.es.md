@@ -12,7 +12,7 @@ Australiano de origen con nacionalidad espa&#241;ola
 
 ## Experiencia
 
-### Software Engineer, GitHub; Madrid, Spain &#8212; 2021&#8211;presente
+### Senior Software Engineer, GitHub; Madrid, Spain &#8212; 2021&#8211;presente
 
 Desarollador en repositorios, pull requests y Codespaces.
 
