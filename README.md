@@ -7,22 +7,22 @@
 
 # Output
 
-Built copies can be found at [https://wincent.github.io/cv/](https://wincent.github.io/cv/):
+Built copies can be found at [https://greg.hurrell.net/](https://greg.hurrell.net/):
 
 ## English
 
-| Brief                                               | Extended                                                 |
-| --------------------------------------------------- | -------------------------------------------------------- |
-| [HTML](https://wincent.github.io/cv/cv.en.html)     | [HTML](https://wincent.github.io/cv/cv-full.en.html)     |
-| [PDF](https://wincent.github.io/cv/cv.en.pdf)       | [PDF](https://wincent.github.io/cv/cv-full.en.pdf)       |
-| [Markdown](https://wincent.github.io/cv/cv.en.md)   | [Markdown](https://wincent.github.io/cv/cv-full.en.md)   |
-| [Plaintext](https://wincent.github.io/cv/cv.en.txt) | [Plaintext](https://wincent.github.io/cv/cv-full.en.txt) |
+| Brief                                           | Extended                                             |
+| ----------------------------------------------- | ---------------------------------------------------- |
+| [HTML](https://greg.hurrell.net/cv.en.html)     | [HTML](https://greg.hurrell.net/cv-full.en.html)     |
+| [PDF](https://greg.hurrell.net/cv.en.pdf)       | [PDF](https://greg.hurrell.net/cv-full.en.pdf)       |
+| [Markdown](https://greg.hurrell.net/cv.en.md)   | [Markdown](https://greg.hurrell.net/cv-full.en.md)   |
+| [Plaintext](https://greg.hurrell.net/cv.en.txt) | [Plaintext](https://greg.hurrell.net/cv-full.en.txt) |
 
 ## Spanish
 
-| Brief                                               | Extended                                                 |
-| --------------------------------------------------- | -------------------------------------------------------- |
-| [HTML](https://wincent.github.io/cv/cv.es.html)     | [HTML](https://wincent.github.io/cv/cv-full.es.html)     |
-| [PDF](https://wincent.github.io/cv/cv.es.pdf)       | [PDF](https://wincent.github.io/cv/cv-full.es.pdf)       |
-| [Markdown](https://wincent.github.io/cv/cv.es.md)   | [Markdown](https://wincent.github.io/cv/cv-full.es.md)   |
-| [Plaintext](https://wincent.github.io/cv/cv.es.txt) | [Plaintext](https://wincent.github.io/cv/cv-full.es.txt) |
+| Brief                                           | Extended                                             |
+| ----------------------------------------------- | ---------------------------------------------------- |
+| [HTML](https://greg.hurrell.net/cv.es.html)     | [HTML](https://greg.hurrell.net/cv-full.es.html)     |
+| [PDF](https://greg.hurrell.net/cv.es.pdf)       | [PDF](https://greg.hurrell.net/cv-full.es.pdf)       |
+| [Markdown](https://greg.hurrell.net/cv.es.md)   | [Markdown](https://greg.hurrell.net/cv-full.es.md)   |
+| [Plaintext](https://greg.hurrell.net/cv.es.txt) | [Plaintext](https://greg.hurrell.net/cv-full.es.txt) |
