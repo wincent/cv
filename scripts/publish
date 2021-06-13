@@ -15,6 +15,14 @@ for FILE in $(find images public -type f -and -not -name '.*'); do
     --cacheinfo "${MODE},${BLOB_ID},${NAME}"
 done
 
+# Special file: "CNAME" for GitHub pages custom domain.
+# See: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-a-subdomain
+BLOB_ID=$(/bin/echo -n greg.hurrell.net | git hash-object -w --stdin)
+MODE=100644
+NAME=CNAME
+env GIT_INDEX_FILE="$INDEX" git update-index \
+  --add \
+  --cacheinfo "${MODE},${BLOB_ID},${NAME}"
 
 # Create tree object from index.
 TREE_ID=$(env GIT_INDEX_FILE="$INDEX" git write-tree)
