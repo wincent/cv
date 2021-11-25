@@ -18,7 +18,7 @@
   "license": "SEE LICENSE IN COPYING.md",
   "private": true,
   "devDependencies": {
-    "ajv": "6.12.2",
+    "ajv": "8.8.2",
     "js-yaml": "4.1.0",
     "minimist": "1.2.5",
     "path-parse": "1.0.7",
