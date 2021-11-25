@@ -13,7 +13,10 @@
       },
       "dateish": {
         "$id": "#dateish",
-        "anyOf": [{"format": "date"}, {"pattern": "^\\d{4}-\\d{2}$"}]
+        "anyOf": [
+          {"format": "date"},
+          {"pattern": "^\\d{4}-\\d{2}$", "type": "string"}
+        ]
       }
     },
     "properties": {
@@ -30,7 +33,7 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "email": {"format": "email"},
+          "email": {"format": "email", "type": "string"},
           "name": {"type": "string"}
         },
         "required": ["email", "name"]
@@ -39,13 +42,13 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "facebook": {"format": "uri"},
-          "github": {"format": "uri"},
-          "keybase": {"format": "uri"},
-          "linkedin": {"format": "uri"},
-          "stackoverflow": {"format": "uri"},
-          "twitter": {"format": "uri"},
-          "website": {"format": "uri"}
+          "facebook": {"format": "uri", "type": "string"},
+          "github": {"format": "uri", "type": "string"},
+          "keybase": {"format": "uri", "type": "string"},
+          "linkedin": {"format": "uri", "type": "string"},
+          "stackoverflow": {"format": "uri", "type": "string"},
+          "twitter": {"format": "uri", "type": "string"},
+          "website": {"format": "uri", "type": "string"}
         }
       },
       "profile": {
@@ -126,7 +129,7 @@
               "additionalProperties": false,
               "properties": {
                 "title": {"type": "string"},
-                "link": {"format": "uri"},
+                "link": {"format": "uri", "type": "string"},
                 "when": {"$ref": "#dateish"}
               },
               "required": ["title", "link", "when"]
@@ -161,7 +164,8 @@
         },
         "required": ["label", "categories"]
       }
-    }
+    },
+    "type": "object"
   },
   "pii": {
     "definitions": {
@@ -193,6 +197,7 @@
       "phone": {"type": "string"}
     },
     "additionalProperties": false,
-    "required": ["street", "zip", "city", "country", "phone"]
+    "required": ["street", "zip", "city", "country", "phone"],
+    "type": "object"
   }
 }
