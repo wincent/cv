@@ -1,4 +1,5 @@
 const Ajv = require('ajv');
+const addFormats = require('ajv-formats');
 const fs = require('fs');
 const yaml = require('js-yaml');
 const PDFDocument = require('pdfkit');
@@ -11,6 +12,7 @@ const PRESENT = {
 
 function validate(data, schema) {
   const ajv = new Ajv({allErrors: true, $data: true});
+  addFormats(ajv);
   const validate = ajv.compile(schema);
   const valid = validate(data);
   if (!valid) {
