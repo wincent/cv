@@ -20,12 +20,12 @@ function validate(data, schema) {
   }
 }
 
-const rawData = yaml.safeLoad(fs.readFileSync('./cv.yml', 'utf8'));
+const rawData = yaml.load(fs.readFileSync('./cv.yml', 'utf8'));
 validate(rawData, schema.cv);
 
 let pii;
 try {
-  pii = yaml.safeLoad(fs.readFileSync('./pii.yml', 'utf8'));
+  pii = yaml.load(fs.readFileSync('./pii.yml', 'utf8'));
 } catch (err) {
   console.log('Failed to load pii.yml; run `vendor/git-cipher decrypt`');
   pii = {
