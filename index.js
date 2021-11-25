@@ -180,7 +180,7 @@ class HTML {
       <body>
       <header>
       <h1>${name}</h1>
-      ${raw(content.map(line => html`<p>${line}</p>\n`).join('\n'))}
+      ${raw(content.map((line) => html`<p>${line}</p>\n`).join('\n'))}
       <p><a href="mailto:${email}">${email}</a>
       ${raw(links)}
     `

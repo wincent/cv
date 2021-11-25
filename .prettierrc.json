@@ -1,5 +1,6 @@
 {
   "bracketSpacing": false,
+  "embeddedLanguageFormatting": "off",
   "singleQuote": true,
   "trailingComma": "all"
 }
