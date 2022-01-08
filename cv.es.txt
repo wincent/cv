@@ -59,10 +59,10 @@ Flinders University, 1999 — Bachelor of Education (UP/LS)(Hons)
 Conocimiento
 ============
 
-Lenguajes de programación: JavaScript, Ruby, C, Haskell, ReasonML, PHP,
-Perl, Objective-C.
+Lenguajes de programación: JavaScript/TypeScript, Lua, Ruby, Rust, C,
+Haskell, ReasonML, PHP, Perl, Objective-C.
 
-Herramientas: HTML/CSS, Zsh/Bash, Vim, Git/Mercurial, MySQL/Redis,
-Ansible, AWS.
+Herramientas: HTML/CSS, Zsh/Bash, Vim/Neovim, Git/Mercurial,
+MySQL/Redis, Ansible, AWS.
 
 Idiomas: inglés (nativo), español (DELE nivel C1, "Avanzado").

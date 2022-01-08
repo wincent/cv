@@ -60,8 +60,8 @@ Golden Key Scholar Award
 
 ## Skills
 
-Programming languages: JavaScript, Ruby, C, Haskell, ReasonML, PHP, Perl, Objective-C.
+Programming languages: JavaScript/TypeScript, Lua, Ruby, Rust, C, Haskell, ReasonML, PHP, Perl, Objective-C.
 
-Tools: HTML/CSS, Zsh/Bash, Vim, Git/Mercurial, MySQL/Redis, Ansible, AWS.
+Tools: HTML/CSS, Zsh/Bash, Vim/Neovim, Git/Mercurial, MySQL/Redis, Ansible, AWS.
 
 Spoken languages: English (native), Spanish (DELE level C1, "Advanced").
