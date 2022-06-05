@@ -89,10 +89,10 @@ https://youtu.be/qgCM2bca49w
 Conocimiento
 ============
 
-Lenguajes de programación: JavaScript/TypeScript, Lua, Ruby, Rust, C,
-Haskell, ReasonML, PHP, Perl, Objective-C.
+Lenguajes de programación: TypeScript/JavaScript, Lua, Ruby, Rust, C,
+Go, Haskell, PHP, Perl, Objective-C.
 
-Herramientas: HTML/CSS, Zsh/Bash, Vim/Neovim, Git/Mercurial,
+Herramientas: HTML/CSS, Zsh/Bash, Neovim/Vim, Git/Mercurial,
 MySQL/Redis, Ansible, AWS.
 
 Idiomas: inglés (nativo), español (DELE nivel C1, "Avanzado").

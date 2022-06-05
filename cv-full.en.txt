@@ -85,10 +85,10 @@ https://youtu.be/qgCM2bca49w
 Skills
 ======
 
-Programming languages: JavaScript/TypeScript, Lua, Ruby, Rust, C,
-Haskell, ReasonML, PHP, Perl, Objective-C.
+Programming languages: TypeScript/JavaScript, Lua, Ruby, Rust, C, Go,
+Haskell, PHP, Perl, Objective-C.
 
-Tools: HTML/CSS, Zsh/Bash, Vim/Neovim, Git/Mercurial, MySQL/Redis,
+Tools: HTML/CSS, Zsh/Bash, Neovim/Vim, Git/Mercurial, MySQL/Redis,
 Ansible, AWS.
 
 Spoken languages: English (native), Spanish (DELE level C1, "Advanced").
