@@ -2,7 +2,7 @@ languages:
   - en
   - es
 
-version: 2021-05-07
+version: 2022-06-05
 
 identity:
   email: greg@hurrell.net
@@ -169,13 +169,13 @@ skills:
         en: Programming languages
         es: Lenguajes de programación
       items:
-        - JavaScript/TypeScript
+        - TypeScript/JavaScript
         - Lua
         - Ruby
         - Rust
         - C
+        - Go
         - Haskell
-        - ReasonML
         - PHP
         - Perl
         - Objective-C
@@ -187,7 +187,7 @@ skills:
       items:
         - HTML/CSS
         - Zsh/Bash
-        - Vim/Neovim
+        - Neovim/Vim
         - Git/Mercurial
         - MySQL/Redis
         - Ansible
