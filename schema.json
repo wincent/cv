@@ -55,10 +55,9 @@
         "additionalProperties": false,
         "properties": {
           "label": {"$ref": "#localized"},
-          "primary": {"$ref": "#localized"},
-          "secondary": {"$ref": "#localized"}
+          "primary": {"$ref": "#localized"}
         },
-        "required": ["label", "primary", "secondary"]
+        "required": ["label", "primary"]
       },
       "experience": {
         "type": "object",
