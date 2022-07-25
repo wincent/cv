@@ -543,16 +543,12 @@ function build({doc, full, language, private} = {}) {
 
   if (data.experience.items.length) {
     doc.heading(data.experience.label);
-    data.experience.items.forEach(
-      ({role, company, from, to, description}) => {
-        doc.subHeading(
-          `${role}, ${company} ${EMDASH} ${date(
-            from,
-          )}${ENDASH}${date(to)}`,
-        );
-        doc.para(description);
-      },
-    );
+    data.experience.items.forEach(({role, company, from, to, description}) => {
+      doc.subHeading(
+        `${role}, ${company} ${EMDASH} ${date(from)}${ENDASH}${date(to)}`,
+      );
+      doc.para(description);
+    });
   }
 
   if (data.education.items.length) {
