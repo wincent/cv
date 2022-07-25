@@ -6,29 +6,29 @@
 
 ## Perfil
 
-Ingeniero de Software en Madrid
+Ingeniero de Software
 
 Australiano de origen con nacionalidad espa&#241;ola
 
 ## Experiencia
 
-### Senior Software Engineer, GitHub; Madrid, Spain &#8212; 2021&#8211;presente
+### Senior Software Engineer, GitHub &#8212; 2021&#8211;presente
 
 Desarollador en repositorios, pull requests y Codespaces.
 
-### Frontend Software Architect, Liferay; Madrid, Spain &#8212; 2019&#8211;2021
+### Frontend Software Architect, Liferay &#8212; 2019&#8211;2021
 
 Dise&#241;ar e implementar frameworks, librer&#237;as y herramientas en JavaScript.
 
-### Ingeniero de Interfaces de Usuario, Facebook; Menlo Park, California &#8212; 2014&#8211;2018
+### Ingeniero de Interfaces de Usuario, Facebook &#8212; 2014&#8211;2018
 
 Fui desarrollador, mentor y l&#237;der tecnol&#243;gico. En infraestructura de productos, desarroll&#233; librer&#237;as en JavaScript de c&#243;digo abierto (Relay, GraphQL) y herramientas internas de compilaci&#243;n y desarrollo. En Interfaces de Gesti&#243;n de Publicidad, trabaj&#233; en aplicaciones de React que figuran entre las m&#225;s grandes y complejas del mundo.
 
-### Director de Ingenier&#237;a, Causes; San Francisco, California &#8212; 2011&#8211;2013
+### Director de Ingenier&#237;a, Causes &#8212; 2011&#8211;2013
 
 Interpret&#233; un papel decisivo en la formaci&#243;n y mantenimiento de la cultura y procesos de ingenier&#237;a, caracterizados por la calidad, el pragmatismo y el desarrollo individual y del equipo. En capacidad de director lider&#233; un equipo de 10 ingenieros.  Desarroll&#233; c&#243;digo a todos los niveles desde las interfaces de usuario hasta la infraestructura subyacente. Implant&#233; revisi&#243;n sistem&#225;tica de de c&#243;digo (a trav&#233;s de Gerrit) y serv&#237; como director, l&#237;der tecnol&#243;gico y mentor.
 
-### Fundador/Aut&#243;nomo, wincent.com; Australia &#8212; 2002&#8211;2011
+### Fundador/Aut&#243;nomo, wincent.com &#8212; 2002&#8211;2011
 
 Desarroll&#233; aplicaciones de macOS en C y Objective-C, aplicaciones de Rails y una gran cantidad de proyectos de c&#243;digo abierto.
 

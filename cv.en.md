@@ -6,29 +6,29 @@
 
 ## Profile
 
-Software Engineer in Madrid
+Software Engineer
 
 Australian with Spanish citizenship
 
 ## Experience
 
-### Senior Software Engineer, GitHub; Madrid, Spain &#8212; 2021&#8211;present
+### Senior Software Engineer, GitHub &#8212; 2021&#8211;present
 
 Working on Repos, Pull Requests, and Codespaces.
 
-### Frontend Software Architect, Liferay; Madrid, Spain &#8212; 2019&#8211;2021
+### Frontend Software Architect, Liferay &#8212; 2019&#8211;2021
 
 Designing and implementing JavaScript frameworks, libraries and tools.
 
-### Front-End Engineer, Facebook; Menlo Park, California &#8212; 2014&#8211;2018
+### Front-End Engineer, Facebook &#8212; 2014&#8211;2018
 
 Coder, mentor and tech lead working on Product Infrastructure &#8212; from open source JavaScript libraries (Relay, GraphQL) to internal build and developer tooling &#8212; and Ads Interfaces (among the largest and full-featured React applications in the world).
 
-### Director of Engineering, Causes; San Francisco, California &#8212; 2011&#8211;2013
+### Director of Engineering, Causes &#8212; 2011&#8211;2013
 
 Key player in the formation and maintenance of engineering culture focused on quality, pragmatism, and individual and team development. Mentored 10 direct reports. Full-stack development of many user-facing features and underlying infrastructure. Implemented systematic code review (via Gerrit). Served as Tech Lead, Coach and Mentor.
 
-### Owner/Operator, wincent.com; Australia &#8212; 2002&#8211;2011
+### Owner/Operator, wincent.com &#8212; 2002&#8211;2011
 
 Developed macOS applications in C and Objective-C, Rails applications, and a large number of open source projects.
 

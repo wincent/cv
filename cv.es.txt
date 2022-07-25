@@ -7,26 +7,26 @@ wincent.com
 Perfil
 ======
 
-Ingeniero de Software en Madrid
+Ingeniero de Software
 
 Australiano de origen con nacionalidad española
 
 Experiencia
 ===========
 
-Senior Software Engineer, GitHub; Madrid, Spain — 2021–presente
----------------------------------------------------------------
+Senior Software Engineer, GitHub — 2021–presente
+------------------------------------------------
 
 Desarollador en repositorios, pull requests y Codespaces.
 
-Frontend Software Architect, Liferay; Madrid, Spain — 2019–2021
----------------------------------------------------------------
+Frontend Software Architect, Liferay — 2019–2021
+------------------------------------------------
 
 Diseñar e implementar frameworks, librerías y herramientas en
 JavaScript.
 
-Ingeniero de Interfaces de Usuario, Facebook; Menlo Park, California — 2014–2018
---------------------------------------------------------------------------------
+Ingeniero de Interfaces de Usuario, Facebook — 2014–2018
+--------------------------------------------------------
 
 Fui desarrollador, mentor y líder tecnológico. En infraestructura de
 productos, desarrollé librerías en JavaScript de código abierto (Relay,
@@ -34,8 +34,8 @@ GraphQL) y herramientas internas de compilación y desarrollo. En
 Interfaces de Gestión de Publicidad, trabajé en aplicaciones de React
 que figuran entre las más grandes y complejas del mundo.
 
-Director de Ingeniería, Causes; San Francisco, California — 2011–2013
----------------------------------------------------------------------
+Director de Ingeniería, Causes — 2011–2013
+------------------------------------------
 
 Interpreté un papel decisivo en la formación y mantenimiento de la
 cultura y procesos de ingeniería, caracterizados por la calidad, el
@@ -45,8 +45,8 @@ los niveles desde las interfaces de usuario hasta la infraestructura
 subyacente. Implanté revisión sistemática de de código (a través de
 Gerrit) y serví como director, líder tecnológico y mentor.
 
-Fundador/Autónomo, wincent.com; Australia — 2002–2011
------------------------------------------------------
+Fundador/Autónomo, wincent.com — 2002–2011
+------------------------------------------
 
 Desarrollé aplicaciones de macOS en C y Objective-C, aplicaciones de
 Rails y una gran cantidad de proyectos de código abierto.

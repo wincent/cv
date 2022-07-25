@@ -7,33 +7,33 @@ wincent.com
 Profile
 =======
 
-Software Engineer in Madrid
+Software Engineer
 
 Australian with Spanish citizenship
 
 Experience
 ==========
 
-Senior Software Engineer, GitHub; Madrid, Spain — 2021–present
---------------------------------------------------------------
+Senior Software Engineer, GitHub — 2021–present
+-----------------------------------------------
 
 Working on Repos, Pull Requests, and Codespaces.
 
-Frontend Software Architect, Liferay; Madrid, Spain — 2019–2021
----------------------------------------------------------------
+Frontend Software Architect, Liferay — 2019–2021
+------------------------------------------------
 
 Designing and implementing JavaScript frameworks, libraries and tools.
 
-Front-End Engineer, Facebook; Menlo Park, California — 2014–2018
-----------------------------------------------------------------
+Front-End Engineer, Facebook — 2014–2018
+----------------------------------------
 
 Coder, mentor and tech lead working on Product Infrastructure — from
 open source JavaScript libraries (Relay, GraphQL) to internal build and
 developer tooling — and Ads Interfaces (among the largest and
 full-featured React applications in the world).
 
-Director of Engineering, Causes; San Francisco, California — 2011–2013
-----------------------------------------------------------------------
+Director of Engineering, Causes — 2011–2013
+-------------------------------------------
 
 Key player in the formation and maintenance of engineering culture
 focused on quality, pragmatism, and individual and team development.
@@ -41,8 +41,8 @@ Mentored 10 direct reports. Full-stack development of many user-facing
 features and underlying infrastructure. Implemented systematic code
 review (via Gerrit). Served as Tech Lead, Coach and Mentor.
 
-Owner/Operator, wincent.com; Australia — 2002–2011
---------------------------------------------------
+Owner/Operator, wincent.com — 2002–2011
+---------------------------------------
 
 Developed macOS applications in C and Objective-C, Rails applications,
 and a large number of open source projects.
