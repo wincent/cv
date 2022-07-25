@@ -8,8 +8,6 @@
 
 Software Engineer
 
-Australian with Spanish citizenship
-
 ## Experience
 
 ### Senior Software Engineer, GitHub &#8212; 2021&#8211;present

@@ -8,8 +8,6 @@
 
 Ingeniero de Software
 
-Australiano de origen con nacionalidad espa&#241;ola
-
 ## Experiencia
 
 ### Senior Software Engineer, GitHub &#8212; 2021&#8211;presente
