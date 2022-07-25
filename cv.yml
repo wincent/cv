@@ -2,7 +2,7 @@ languages:
   - en
   - es
 
-version: 2022-06-05
+version: 2022-07-25
 
 identity:
   email: greg@hurrell.net
@@ -11,7 +11,6 @@ identity:
 presence:
   facebook: https://www.facebook.com/glh
   github: https://github.com/wincent
-  keybase: https://keybase.io/wincent
   linkedin: https://www.linkedin.com/in/greghurrell/
   stackoverflow: https://stackoverflow.com/users/2103996/wincent
   twitter: https://twitter.com/wincent
@@ -22,8 +21,8 @@ profile:
     en: Profile
     es: Perfil
   primary:
-    en: Software Engineer in Madrid
-    es: Ingeniero de Software en Madrid
+    en: Software Engineer
+    es: Ingeniero de Software
   secondary:
     en: Australian with Spanish citizenship
     es: Australiano de origen con nacionalidad española
@@ -38,7 +37,6 @@ experience:
         en: Senior Software Engineer
         es: Senior Software Engineer
       company: GitHub
-      location: Madrid, Spain
       from: 2021-06
       description:
         en: Working on Repos, Pull Requests, and Codespaces.
@@ -48,7 +46,6 @@ experience:
         en: Frontend Software Architect
         es: Frontend Software Architect
       company: Liferay
-      location: Madrid, Spain
       from: 2019-01
       to: 2021-05
       description:
@@ -59,7 +56,6 @@ experience:
         en: Front-End Engineer
         es: Ingeniero de Interfaces de Usuario
       company: Facebook
-      location: Menlo Park, California
       from: 2014-01
       to: 2018-07
       description:
@@ -78,7 +74,6 @@ experience:
         en: Director of Engineering
         es: Director de Ingeniería
       company: Causes
-      location: San Francisco, California
       from: 2011-03
       to: 2013-12
       description:
@@ -102,7 +97,6 @@ experience:
         en: Owner/Operator
         es: Fundador/Autónomo
       company: wincent.com
-      location: Australia
       from: 2002
       to: 2011
       description:

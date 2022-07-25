@@ -33,10 +33,10 @@ try {
   pii = {
     street: '123 Main Street',
     zip: 12345,
-    city: 'Madrid',
+    city: 'San Francisco',
     country: {
-      en: 'Spain',
-      es: 'España',
+      en: 'USA',
+      es: 'Estados Unidos',
     },
     phone: '555-555-5555',
   };
@@ -544,9 +544,9 @@ function build({doc, full, language, private} = {}) {
   if (data.experience.items.length) {
     doc.heading(data.experience.label);
     data.experience.items.forEach(
-      ({role, company, location, from, to, description}) => {
+      ({role, company, from, to, description}) => {
         doc.subHeading(
-          `${role}, ${company}; ${location} ${EMDASH} ${date(
+          `${role}, ${company} ${EMDASH} ${date(
             from,
           )}${ENDASH}${date(to)}`,
         );

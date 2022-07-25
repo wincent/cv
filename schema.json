@@ -44,7 +44,6 @@
         "properties": {
           "facebook": {"format": "uri", "type": "string"},
           "github": {"format": "uri", "type": "string"},
-          "keybase": {"format": "uri", "type": "string"},
           "linkedin": {"format": "uri", "type": "string"},
           "stackoverflow": {"format": "uri", "type": "string"},
           "twitter": {"format": "uri", "type": "string"},
@@ -74,12 +73,11 @@
               "properties": {
                 "role": {"$ref": "#localized"},
                 "company": {"type": "string"},
-                "location": {"type": "string"},
                 "from": {"$ref": "#dateish"},
                 "to": {"$ref": "#dateish"},
                 "description": {"$ref": "#localized"}
               },
-              "required": ["role", "company", "location", "from", "description"]
+              "required": ["role", "company", "from", "description"]
             }
           }
         }
