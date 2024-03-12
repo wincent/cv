@@ -46,8 +46,8 @@
           "github": {"format": "uri", "type": "string"},
           "linkedin": {"format": "uri", "type": "string"},
           "stackoverflow": {"format": "uri", "type": "string"},
-          "twitter": {"format": "uri", "type": "string"},
-          "website": {"format": "uri", "type": "string"}
+          "website": {"format": "uri", "type": "string"},
+          "x": {"format": "uri", "type": "string"}
         }
       },
       "profile": {

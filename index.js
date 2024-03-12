@@ -77,7 +77,7 @@ function stripProtocol(url) {
  * Although we currently allow a few other types to be defined in the YAML,
  * these are the only ones we include in the output for now.
  */
-const PRESENCE_TYPES = ['github', 'twitter', 'website'];
+const PRESENCE_TYPES = ['github', 'x', 'website'];
 
 /**
  * Mark a string as safe for raw interpolation (without escaping) within
