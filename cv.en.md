@@ -1,7 +1,7 @@
 **Greg Hurrell**
 [greg@hurrell.net](mailto:greg@hurrell.net)
 [github.com/wincent](https://github.com/wincent)
-[twitter.com/wincent](https://twitter.com/wincent)
+[x.com/wincent](https://x.com/wincent)
 [wincent.dev](https://wincent.dev)
 
 ## Profile
