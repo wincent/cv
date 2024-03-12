@@ -2,7 +2,7 @@
 [greg@hurrell.net](mailto:greg@hurrell.net)
 [github.com/wincent](https://github.com/wincent)
 [twitter.com/wincent](https://twitter.com/wincent)
-[wincent.com](https://wincent.com)
+[wincent.dev](https://wincent.dev)
 
 ## Perfil
 
@@ -26,7 +26,7 @@ Fui desarrollador, mentor y l&#237;der tecnol&#243;gico. En infraestructura de p
 
 Interpret&#233; un papel decisivo en la formaci&#243;n y mantenimiento de la cultura y procesos de ingenier&#237;a, caracterizados por la calidad, el pragmatismo y el desarrollo individual y del equipo. En capacidad de director lider&#233; un equipo de 10 ingenieros.  Desarroll&#233; c&#243;digo a todos los niveles desde las interfaces de usuario hasta la infraestructura subyacente. Implant&#233; revisi&#243;n sistem&#225;tica de de c&#243;digo (a trav&#233;s de Gerrit) y serv&#237; como director, l&#237;der tecnol&#243;gico y mentor.
 
-### Fundador/Aut&#243;nomo, wincent.com &#8212; 2002&#8211;2011
+### Fundador/Aut&#243;nomo, wincent.dev &#8212; 2002&#8211;2011
 
 Desarroll&#233; aplicaciones de macOS en C y Objective-C, aplicaciones de Rails y una gran cantidad de proyectos de c&#243;digo abierto.
 

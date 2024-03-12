@@ -2,7 +2,7 @@ Greg Hurrell
 greg@hurrell.net
 github.com/wincent
 twitter.com/wincent
-wincent.com
+wincent.dev
 
 Perfil
 ======
@@ -43,7 +43,7 @@ los niveles desde las interfaces de usuario hasta la infraestructura
 subyacente. Implanté revisión sistemática de de código (a través de
 Gerrit) y serví como director, líder tecnológico y mentor.
 
-Fundador/Autónomo, wincent.com — 2002–2011
+Fundador/Autónomo, wincent.dev — 2002–2011
 ------------------------------------------
 
 Desarrollé aplicaciones de macOS en C y Objective-C, aplicaciones de

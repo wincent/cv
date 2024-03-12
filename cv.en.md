@@ -2,7 +2,7 @@
 [greg@hurrell.net](mailto:greg@hurrell.net)
 [github.com/wincent](https://github.com/wincent)
 [twitter.com/wincent](https://twitter.com/wincent)
-[wincent.com](https://wincent.com)
+[wincent.dev](https://wincent.dev)
 
 ## Profile
 
@@ -26,7 +26,7 @@ Coder, mentor and tech lead working on Product Infrastructure &#8212; from open 
 
 Key player in the formation and maintenance of engineering culture focused on quality, pragmatism, and individual and team development. Mentored 10 direct reports. Full-stack development of many user-facing features and underlying infrastructure. Implemented systematic code review (via Gerrit). Served as Tech Lead, Coach and Mentor.
 
-### Owner/Operator, wincent.com &#8212; 2002&#8211;2011
+### Owner/Operator, wincent.dev &#8212; 2002&#8211;2011
 
 Developed macOS applications in C and Objective-C, Rails applications, and a large number of open source projects.
 
