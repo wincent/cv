@@ -14,7 +14,7 @@ presence:
   linkedin: https://www.linkedin.com/in/greghurrell/
   stackoverflow: https://stackoverflow.com/users/2103996/wincent
   twitter: https://twitter.com/wincent
-  website: https://wincent.com
+  website: https://wincent.dev
 
 profile:
   label:
@@ -93,7 +93,7 @@ experience:
     - role:
         en: Owner/Operator
         es: Fundador/Autónomo
-      company: wincent.com
+      company: wincent.dev
       from: 2002
       to: 2011
       description:
