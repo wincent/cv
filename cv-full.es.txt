@@ -12,8 +12,13 @@ Ingeniero de Software
 Experiencia
 ===========
 
-Senior Software Engineer, GitHub — 2021–presente
+Staff Software Engineer, Datadog — 2024–presente
 ------------------------------------------------
+
+Desarrollador en el frontend del Profiler
+
+Senior Software Engineer, GitHub — 2021–2024
+--------------------------------------------
 
 Desarollador en repositorios, pull requests y Codespaces.
 
