@@ -2,7 +2,7 @@ languages:
   - en
   - es
 
-version: 2022-07-25
+version: 2024-05-20
 
 identity:
   email: greg@hurrell.net
@@ -31,10 +31,20 @@ experience:
 
   items:
     - role:
+        en: Staff Software Engineer
+        es: Staff Software Engineer
+      company: Datadog
+      from: 2024-06
+      description:
+        en: Working on the Frontend of the Profiler
+        es: Desarrollador en el frontend del Profiler
+
+    - role:
         en: Senior Software Engineer
         es: Senior Software Engineer
       company: GitHub
       from: 2021-06
+      to: 2024-05
       description:
         en: Working on Repos, Pull Requests, and Codespaces.
         es: Desarollador en repositorios, pull requests y Codespaces.
