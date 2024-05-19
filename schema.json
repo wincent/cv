@@ -28,7 +28,7 @@
           "pattern": "^[a-z]{2}$"
         }
       },
-      "version": {"format": "date"},
+      "version": {"format": "date", "type": "string"},
       "identity": {
         "type": "object",
         "additionalProperties": false,
