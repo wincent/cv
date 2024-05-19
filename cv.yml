@@ -2,7 +2,7 @@ languages:
   - en
   - es
 
-version: "2024-05-20"
+version: '2024-05-20'
 
 identity:
   email: greg@hurrell.net
