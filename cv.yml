@@ -36,7 +36,7 @@ experience:
       company: Datadog
       from: 2024-06
       description:
-        en: Working on the Frontend of the Profiler
+        en: Working on the Continuous Profiler frontend
         es: Desarrollador en el frontend del Profiler
 
     - role:
@@ -60,7 +60,7 @@ experience:
         es: Diseñar e implementar frameworks, librerías y herramientas en JavaScript.
 
     - role:
-        en: Front-End Engineer
+        en: Frontend Engineer
         es: Ingeniero de Interfaces de Usuario
       company: Facebook
       from: 2014-01
