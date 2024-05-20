@@ -12,7 +12,7 @@ Software Engineer
 
 ### Staff Software Engineer, Datadog &#8212; 2024&#8211;present
 
-Working on the Frontend of the Profiler
+Working on the Continuous Profiler frontend
 
 ### Senior Software Engineer, GitHub &#8212; 2021&#8211;2024
 
@@ -22,7 +22,7 @@ Working on Repos, Pull Requests, and Codespaces.
 
 Designing and implementing JavaScript frameworks, libraries and tools.
 
-### Front-End Engineer, Facebook &#8212; 2014&#8211;2018
+### Frontend Engineer, Facebook &#8212; 2014&#8211;2018
 
 Coder, mentor and tech lead working on Product Infrastructure &#8212; from open source JavaScript libraries (Relay, GraphQL) to internal build and developer tooling &#8212; and Ads Interfaces (among the largest and full-featured React applications in the world).
 

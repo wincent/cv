@@ -15,7 +15,7 @@ Experience
 Staff Software Engineer, Datadog — 2024–present
 -----------------------------------------------
 
-Working on the Frontend of the Profiler
+Working on the Continuous Profiler frontend
 
 Senior Software Engineer, GitHub — 2021–2024
 --------------------------------------------
@@ -27,8 +27,8 @@ Frontend Software Architect, Liferay — 2019–2021
 
 Designing and implementing JavaScript frameworks, libraries and tools.
 
-Front-End Engineer, Facebook — 2014–2018
-----------------------------------------
+Frontend Engineer, Facebook — 2014–2018
+---------------------------------------
 
 Coder, mentor and tech lead working on Product Infrastructure — from
 open source JavaScript libraries (Relay, GraphQL) to internal build and
