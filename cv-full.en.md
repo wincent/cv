@@ -10,7 +10,7 @@ Software Engineer
 
 ## Experience
 
-### Staff Software Engineer, Datadog &#8212; 2024&#8211;present
+### Staff Engineer, Datadog &#8212; 2024&#8211;present
 
 Working on the Continuous Profiler frontend
 

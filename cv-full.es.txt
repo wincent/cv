@@ -12,8 +12,8 @@ Ingeniero de Software
 Experiencia
 ===========
 
-Staff Software Engineer, Datadog — 2024–presente
-------------------------------------------------
+Staff Engineer, Datadog — 2024–presente
+---------------------------------------
 
 Desarrollador en el frontend del Profiler
 
