@@ -5,6 +5,16 @@
 - `yarn test`: Check JS formatting.
 - `yarn format`: Fix JS formatting.
 
+To decrypt encrypted content:
+
+```
+git submodule update --init
+cd vendor/git-cipher
+git submodule update --init
+cd -
+vendor/git-cipher/bin/git-cipher unlock
+```
+
 # Output
 
 Built copies can be found at [https://greg.hurrell.net/](https://greg.hurrell.net/):

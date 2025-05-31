@@ -1,3 +1,4 @@
 [submodule "vendor/git-cipher"]
+	branch = next
 	path = vendor/git-cipher
 	url = https://github.com/wincent/git-cipher.git
