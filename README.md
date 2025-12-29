@@ -5,14 +5,18 @@
 - `yarn test`: Check JS formatting.
 - `yarn format`: Fix JS formatting.
 
-To decrypt encrypted content:
+To encrypt or decrypt the encrypted content in [`pii.yml`](./pii.yml), we rely on my [age](https://github.com/FiloSottile/age) key, stored in 1Password, and placed in `~/.config/age/key.txt`:
 
 ```
-git submodule update --init
-cd vendor/git-cipher
-git submodule update --init
-cd -
-vendor/git-cipher/bin/git-cipher unlock
+# Make
+mkdir -p ~/.config/age
+chmod 0700 !$
+
+# First time only.
+brew install age
+
+bin/decrypt
+bin/encrypt
 ```
 
 # Output

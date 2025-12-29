@@ -1,0 +1,116 @@
+#!/bin/bash
+
+set -e
+
+SCRIPT_NAME=$(basename "$0")
+if [[ "$SCRIPT_NAME" == "decrypt" ]]; then
+  OPERATION="decrypt"
+elif [[ "$SCRIPT_NAME" == "crypt-status" ]]; then
+  OPERATION="status"
+else
+  OPERATION="encrypt"
+fi
+
+RECIPIENT=age1l4fu9sazx2umpxw6t2hfdyq4ckun728epmz22y38tvlycu7t6sqqygexfu
+IDENTITY="$HOME/.config/age/key.txt"
+
+BOLD=$(tput bold)
+GREEN=$(tput setaf 2)
+RED=$(tput setaf 1)
+RESET=$(tput sgr0)
+
+ITEMS[0]="pii.yml"
+
+decrypt() {
+  local PLAINTEXT=$1
+  local CIPHERTEXT="${PLAINTEXT}.encrypted"
+
+  if [ ! -f "$IDENTITY" ]; then
+    echo "💥 ${BOLD}${RED}Cannot decrypt without identity:${RESET} ${IDENTITY}"
+    exit 1
+  fi
+
+  if [ -f "$CIPHERTEXT" ]; then
+    echo "🔓 ${BOLD}${GREEN}Decrypting:${RESET} ${PLAINTEXT}"
+    age --decrypt -i "$IDENTITY" -o "$PLAINTEXT" "$CIPHERTEXT"
+    if [[ "$PLAINTEXT" == *.sh ]]; then
+      chmod +x "$PLAINTEXT"
+    fi
+  else
+    echo "💥 ${BOLD}${RED}Not decrypting (non-file):${RESET} ${CIPHERTEXT}"
+  fi
+}
+
+encrypt() {
+  local PLAINTEXT=$1
+  local CIPHERTEXT="${PLAINTEXT}.encrypted"
+
+  if [ -f "$PLAINTEXT" ]; then
+    if [ -f "$CIPHERTEXT" -a -f "$IDENTITY" ]; then
+      local DECRYPTED=$(age --decrypt -i "$IDENTITY" "$CIPHERTEXT")
+      if [[ "$DECRYPTED" == "$(cat "$PLAINTEXT")" ]]; then
+        echo "⏩ ${BOLD}Skipping (already up-to-date):${RESET} ${PLAINTEXT}"
+        return
+      fi
+    fi
+    echo "🔑 ${BOLD}${GREEN}Encrypting:${RESET} ${PLAINTEXT}"
+    age --encrypt -r $RECIPIENT --armor -o "${CIPHERTEXT}"  "$PLAINTEXT"
+  else
+    echo "💥 ${BOLD}${RED}Not encrypting (non-file):${RESET} ${PLAINTEXT}"
+  fi
+}
+
+ignore() {
+  local PLAINTEXT=$1
+
+  if ! grep -qxF "/$PLAINTEXT" .gitignore 2> /dev/null; then
+    echo "✅ ${BOLD}${GREEN}Ignoring:${RESET} ${PLAINTEXT}"
+    echo "/$PLAINTEXT" >> .gitignore
+  else
+    echo "🙈 ${BOLD}Already ignored:${RESET} ${PLAINTEXT}"
+  fi
+}
+
+status() {
+  local PLAINTEXT=$1
+
+  if [ ! -f "$PLAINTEXT" ]; then
+    echo "$PLAINTEXT"
+  fi
+}
+
+REPO_ROOT="${BASH_SOURCE%/*}/.."
+cd "$REPO_ROOT"
+
+# If specific files are provided as arguments, filter ITEMS to only those files
+if [ $# -gt 0 ]; then
+  FILTERED_ITEMS=()
+  for ARG in "$@"; do
+    # Make path relative to repo root if it's absolute
+    if [[ "$ARG" == "$REPO_ROOT"/* ]]; then
+      ARG="${ARG#$REPO_ROOT/}"
+    fi
+    # Check if this argument matches any item in ITEMS
+    for ITEM in "${ITEMS[@]}"; do
+      if [[ "$ITEM" == "$ARG" ]]; then
+        FILTERED_ITEMS+=("$ITEM")
+        break
+      fi
+    done
+  done
+  ITEMS=("${FILTERED_ITEMS[@]}")
+fi
+
+for ITEM in "${ITEMS[@]}"; do
+  if [[ "$OPERATION" == "encrypt" ]]; then
+    encrypt "$ITEM"
+    ignore "$ITEM"
+  elif [[ "$OPERATION" == "decrypt" ]]; then
+    decrypt "$ITEM"
+  elif [[ "$OPERATION" == "status" ]]; then
+    status "$ITEM"
+  else
+    echo "💥 ${BOLD}${RED}Unsupported operation:${RESET} $OPERATION"
+    exit 1
+  fi
+done
