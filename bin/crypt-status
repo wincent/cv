@@ -1,1 +1,6 @@
-encrypt
+#!/bin/bash
+
+# `wage` ("wincent age") is a thin wrapper around `age`, installed from:
+# https://github.com/wincent/wincent/blob/b992f2a187be15bd85eb9297837a46c841a52f74/aspects/dotfiles/files/.zsh/bin/wage
+
+exec wage status "$@"
