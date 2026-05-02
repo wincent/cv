@@ -2,7 +2,7 @@ languages:
   - en
   - es
 
-version: '2024-05-20'
+version: '2026-05-02'
 
 identity:
   email: greg@hurrell.net
@@ -13,8 +13,10 @@ presence:
   github: https://github.com/wincent
   linkedin: https://www.linkedin.com/in/greghurrell/
   stackoverflow: https://stackoverflow.com/users/2103996/wincent
+  twitch: https://www.twitch.tv/greghurrell
   website: https://wincent.dev
   x: https://x.com/wincent
+  youtube: https://www.youtube.com/@GregHurrell
 
 profile:
   label:
@@ -180,16 +182,18 @@ skills:
         - PHP
         - Perl
         - Objective-C
+        - Swift
 
     tools:
       label:
         en: Tools
         es: Herramientas
       items:
+        - Claude/Pi
         - HTML/CSS
         - Zsh/Bash
         - Neovim/Vim
-        - Git/Mercurial
+        - Git/Jujutsu/Mercurial
         - MySQL/Redis
         - Ansible
         - AWS

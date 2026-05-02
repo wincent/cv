@@ -48,8 +48,10 @@
           "github": {"format": "uri", "type": "string"},
           "linkedin": {"format": "uri", "type": "string"},
           "stackoverflow": {"format": "uri", "type": "string"},
+          "twitch": {"format": "uri", "type": "string"},
           "website": {"format": "uri", "type": "string"},
-          "x": {"format": "uri", "type": "string"}
+          "x": {"format": "uri", "type": "string"},
+          "youtube": {"format": "uri", "type": "string"}
         }
       },
       "profile": {
