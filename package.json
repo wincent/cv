@@ -18,10 +18,10 @@
   "license": "SEE LICENSE IN COPYING.md",
   "private": true,
   "devDependencies": {
-    "ajv": "8.13.0",
+    "ajv": "8.20.0",
     "ajv-formats": "3.0.1",
-    "js-yaml": "4.1.0",
-    "pdfkit": "0.15.0",
-    "prettier": "3.2.5"
+    "js-yaml": "4.1.1",
+    "pdfkit": "0.18.0",
+    "prettier": "3.8.3"
   }
 }
