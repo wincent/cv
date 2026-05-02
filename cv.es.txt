@@ -1,7 +1,7 @@
 Greg Hurrell
 greg@hurrell.net
 github.com/wincent
-x.com/wincent
+www.youtube.com/@GregHurrell
 wincent.dev
 
 Perfil
@@ -63,9 +63,9 @@ Conocimiento
 ============
 
 Lenguajes de programación: TypeScript/JavaScript, Lua, Ruby, Rust, C,
-Go, Haskell, PHP, Perl, Objective-C.
+Go, Haskell, PHP, Perl, Objective-C, Swift.
 
-Herramientas: HTML/CSS, Zsh/Bash, Neovim/Vim, Git/Mercurial,
-MySQL/Redis, Ansible, AWS.
+Herramientas: Claude/Pi, HTML/CSS, Zsh/Bash, Neovim/Vim,
+Git/Jujutsu/Mercurial, MySQL/Redis, Ansible, AWS.
 
 Idiomas: inglés (nativo), español (DELE nivel C1, "Avanzado").

@@ -1,7 +1,7 @@
 **Greg Hurrell**
 [greg@hurrell.net](mailto:greg@hurrell.net)
 [github.com/wincent](https://github.com/wincent)
-[x.com/wincent](https://x.com/wincent)
+[www.youtube.com/@GregHurrell](https://www.youtube.com/@GregHurrell)
 [wincent.dev](https://wincent.dev)
 
 ## Perfil
@@ -40,8 +40,8 @@ Flinders University, 1999 &#8212; Bachelor of Education (UP/LS)(Hons)
 
 ## Conocimiento
 
-Lenguajes de programaci&#243;n: TypeScript/JavaScript, Lua, Ruby, Rust, C, Go, Haskell, PHP, Perl, Objective-C.
+Lenguajes de programaci&#243;n: TypeScript/JavaScript, Lua, Ruby, Rust, C, Go, Haskell, PHP, Perl, Objective-C, Swift.
 
-Herramientas: HTML/CSS, Zsh/Bash, Neovim/Vim, Git/Mercurial, MySQL/Redis, Ansible, AWS.
+Herramientas: Claude/Pi, HTML/CSS, Zsh/Bash, Neovim/Vim, Git/Jujutsu/Mercurial, MySQL/Redis, Ansible, AWS.
 
 Idiomas: ingl&#233;s (nativo), espa&#241;ol (DELE nivel C1, "Avanzado").
