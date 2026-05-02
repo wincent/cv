@@ -298,7 +298,7 @@ class PDF {
 
   _reset() {
     this._commands = [];
-    this._doc = new PDFDocument({info: this.info});
+    this._doc = new PDFDocument({info: this.info, margin: 54});
     this._doc
       .registerFont(
         'baskerville',
