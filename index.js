@@ -29,7 +29,7 @@ let pii;
 try {
   pii = yaml.load(fs.readFileSync('./pii.yml', 'utf8'));
 } catch (err) {
-  console.log('Failed to load pii.yml; run `vendor/git-cipher decrypt`');
+  console.log('Failed to load pii.yml; run `bin/decrypt`');
   pii = {
     street: '123 Main Street',
     zip: 12345,
