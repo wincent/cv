@@ -5,16 +5,9 @@
 - `yarn test`: Check JS formatting.
 - `yarn format`: Fix JS formatting.
 
-To encrypt or decrypt the encrypted content in [`pii.yml`](./pii.yml), we rely on my [age](https://github.com/FiloSottile/age) key, stored in 1Password, and placed in `~/.config/age/key.txt`:
+To encrypt or decrypt the encrypted content in [`pii.yml`](./pii.yml), we rely on my [age](https://github.com/FiloSottile/age) key, stored in 1Password, and [the `wage` wrapper](https://github.com/wincent/wincent/blob/0ba28060aff14224f9f9b05b197a74d58defa330/aspects/dotfiles/files/.zsh/bin/wage) from my dotfiles.
 
 ```
-# Make
-mkdir -p ~/.config/age
-chmod 0700 !$
-
-# First time only.
-brew install age
-
 bin/decrypt
 bin/encrypt
 ```
